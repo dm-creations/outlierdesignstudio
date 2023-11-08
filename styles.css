@@ -1,0 +1,228 @@
+/* FILEPATH: styles.css */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements */
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* Remove text-decoration on links */
+a {
+  text-decoration: none;
+}
+
+/* Reset button styles */
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  background-color: transparent;
+  border: 0;
+  padding: 0;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.hero {
+    background-image: url("img/hero.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.hero button {
+    background-color: #fff;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease-in-out;
+}
+.hero button:hover {
+    transform: scale(1.1);
+}
+@media (max-width: 768px) {
+    .hero {
+        height: 100%;
+    }
+}
+.intro {
+    /* off-white background colour: */
+    background-color: #f8f8f8;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin: 20px;
+    text-align: center;
+}
+.portfolio {
+    /* portfolio section with four square images and a background image with a blur over it */
+    position: relative;
+    background-image: url("img/portfolio-bg.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.portfolio-mask {
+    /* mask to blur the background image */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(10px);
+    z-index: 1;
+}
+
+.image-gallery {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    z-index: 2;
+}
+
+.img-card {
+    /* image card with a background image and a hover effect */
+    position: relative;
+    width: 200px;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 5px;
+    margin: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.25s ease-in-out;
+}
+.img-card:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+}
+.image-gallery img {
+    /* images in the gallery */
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.25s ease-in-out;
+}
+
+/* .features {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 20px;
+    margin: 20px;
+} */
+
+/* General styling for the features section */
+.features {
+    text-align: center; /* Center align the text */
+    background: #f7f7f7; /* Light grey background for the features section */
+    padding: 50px 0; /* Add some padding above and below */
+  }
+  
+  .features h2 {
+    color: #333; /* Dark grey color for the heading */
+    margin-bottom: 30px; /* Space below the heading */
+  }
+  
+  .feature-lists {
+    display: flex; /* Use flexbox to create a row of feature cards */
+    justify-content: space-around; /* Spread out the cards evenly */
+    flex-wrap: wrap; /* Allow the cards to wrap on smaller screens */
+    gap: 20px; /* Add space between the cards */
+  }
+  
+  .feature-card {
+    background: white; /* White background for the cards */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    width: 300px; /* Fixed width */
+    padding: 20px; /* Padding inside the cards */
+    list-style: none; /* Remove default list styling */
+    margin: 0; /* Remove default margin */
+  }
+  
+  .feature-card:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Larger shadow on hover */
+    transform: translateY(-5px); /* Slightly raise the card */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+  }
+  
+  .feature-card li {
+    margin-bottom: 15px; /* Space between list items */
+    font-weight: bold; /* Make the text bold */
+    color: #555; /* Slightly darker text color */
+  }
+  
+  .feature-card li:last-child {
+    margin-bottom: 0; /* Remove margin from the last item */
+  }
+  
