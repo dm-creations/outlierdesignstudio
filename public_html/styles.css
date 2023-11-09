@@ -71,7 +71,7 @@ select {
 }
 
 .hero {
-    background-image: url("img/hero.jpeg");
+    background-image: url("img/hero.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -112,7 +112,7 @@ select {
 .portfolio {
     /* portfolio section with four square images and a background image with a blur over it */
     position: relative;
-    background-image: url("img/portfolio-bg.jpeg");
+    background-image: url("img/portfolio-bg.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
