@@ -64,42 +64,144 @@
 
 	<section class="how-it-works">
 		<h2>How it Works</h2>
-		<p>Subscribe -> Submit your tasks -> up to 72 hours delivery -> next task</p>
-	</section>
+		<div class="steps-container">
+		  <div class="step">Subscribe</div>
+		  <svg class="arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="0" y1="12" x2="24" y2="12"/><polyline points="16 6 24 12 16 18"/></svg>
+		  <div class="step">Submit your tasks</div>
+		  <svg class="arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="0" y1="12" x2="24" y2="12"/><polyline points="16 6 24 12 16 18"/></svg>
+		  <div class="step">Up to 72 hours delivery</div>
+		  <svg class="arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="0" y1="12" x2="24" y2="12"/><polyline points="16 6 24 12 16 18"/></svg>
+		  <div class="step">Next task</div>
+		</div>
+	  </section>	  
 
 	<section class="services">
-		<div class="design">
+		<div class="service-column design">
 			<h3>Design</h3>
-			<p>UI/UX Design, Responsive Design, Branding Integration, Custom Graphics, Multimedia Content, Landing Page Design, Visual Content Updates, Theme Customisation</p>
+			<ul>
+				<li>UI/UX Design</li>
+				<li>Responsive Design</li>
+				<li>Branding Integration</li>
+				<li>Custom Graphics</li>
+				<li>Multimedia Content</li>
+				<li>Landing Page Design</li>
+				<li>Visual Content Updates</li>
+				<li>Theme Customisation</li>
+			</ul>
 		</div>
-		<div class="development">
+		<div class="service-column development">
 			<h3>Development</h3>
-			<p>CMS Implementation and Customisation, Payment Integration, Plugin/Extension Development, Performance Optimization, SEO Optimization, API Integration, Mobile Optimization, Security Enhancements, Accessibility Compliance, Database Management, Content Migration, Analytics and Reporting Tool Integration</p>
+			<ul>
+				<li>CMS Implementation and Customisation</li>
+				<li>Payment Integration</li>
+				<li>Plugin/Extension Development</li>
+				<li>Performance Optimization</li>
+				<li>SEO Optimization</li>
+				<li>API Integration</li>
+				<li>Mobile Optimization</li>
+				<li>Security Enhancements</li>
+				<li>Accessibility Compliance</li>
+				<li>Database Management</li>
+				<li>Content Migration</li>
+				<li>Analytics and Reporting Tool Integration</li>
+			</ul>
 		</div>
 	</section>
+	  
 
 	<section class="pricing">
-		<h3>Pricing:</h3>
-		<p>£2500 a month<br>One single or combined request at a time<br>72 hour turnaround<br>Easy card payments<br>Pause or cancel anytime</p>
+		<div class="card">
+			<h3>Pricing:</h3>
+			<h2>£2500 <span>/ month</span></h2>
+			<ul>
+				<li>One single or combined request at a time</li>
+				<li>72 hour turnaround</li>
+				<li>Easy card payments</li>
+				<li>Pause or cancel anytime</li>
+			</ul>
+			<button class="btn-signup">Sign Up</button>
+		</div>
 	</section>
 
 	<section class="testimonials">
 		<h2>Testimonials</h2>
-		<article>
+		<div class="testimonial-container">
+		  <article class="testimonial" id="testimonial1">
 			<p>Carrie at x company</p>
-			<blockquote>Great to work with</blockquote>
-		</article>
-		<!-- More testimonials can go here -->
-	</section>
-	
+			<blockquote>Great to work with.</blockquote>
+		  </article>
+		  <article class="testimonial" id="testimonial2">
+			<p>Sam at y company</p>
+			<blockquote>Outstanding service and support!</blockquote>
+		  </article>
+		  <article class="testimonial" id="testimonial3">
+			<p>Alex at z company</p>
+			<blockquote>The team exceeded our expectations.</blockquote>
+		  </article>
+		</div>
+	  </section>
+
 	<section class="faq">
 		<h1>FAQs</h1>
-		<!-- FAQ content -->
+		<div class="faq-item">
+			<button class="faq-question">What payment methods do you accept?</button>
+			<div class="faq-answer">
+				<p>We accept all major credit cards, PayPal, and bank transfers.</p>
+			</div>
+		</div>
+		<div class="faq-item">
+			<button class="faq-question">Can I upgrade my plan at any time?</button>
+			<div class="faq-answer">
+				<p>Yes, you can upgrade your plan at any time through your account dashboard.</p>
+			</div>
+		</div>
+		<div class="faq-item">
+			<button class="faq-question">Do you offer customer support?</button>
+			<div class="faq-answer">
+				<p>Customer support is available 24/7 via email, phone, and live chat.</p>
+			</div>
+		</div>
+		<!-- More FAQ items can go here -->
 	</section>
-	
-	<footer>
-		<p>Copyright outlierdesignstudio 2023</p>
+		
+	<footer class="site-footer">
+		<div class="footer-content">
+		  <p>Connect with us:</p>
+		  <ul class="social-links">
+			<li><a href="https://twitter.com" target="_blank">Twitter</a></li>
+			<li><a href="https://facebook.com" target="_blank">Facebook</a></li>
+			<li><a href="https://instagram.com" target="_blank">Instagram</a></li>
+			<li><a href="https://linkedin.com" target="_blank">LinkedIn</a></li>
+		  </ul>
+		  <p class="copyright">
+			&copy; Copyright outlierdesignstudio.co.uk <span id="ytd">2023</span>
+		  </p>
+		</div>
 	</footer>
+	  
 	
 </body>
+<script>
+	document.querySelectorAll('.faq-question').forEach((question) => {
+    question.addEventListener('click', () => {
+        const answer = question.nextElementSibling;
+        answer.classList.toggle('active');
+        
+        // Optional: Collapse other open answers when one is expanded
+        document.querySelectorAll('.faq-answer').forEach((item) => {
+            if (item !== answer) {
+                item.classList.remove('active');
+            }
+        });
+    });
+	// replace the year in the footer with the current year
+	const year = new Date().getFullYear();
+	// if browser can't return a valid value, hide the year
+	if (year) {
+		document.getElementById('ytd').textContent = year;
+	} else {
+		document.getElementById('ytd').style.display = 'none';
+	}
+});
+</script>
 </html>

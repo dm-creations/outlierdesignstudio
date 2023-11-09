@@ -183,46 +183,448 @@ select {
 
 /* General styling for the features section */
 .features {
-    text-align: center; /* Center align the text */
-    background: #f7f7f7; /* Light grey background for the features section */
-    padding: 50px 0; /* Add some padding above and below */
+  text-align: center; /* Center align the text */
+  background: #f7f7f7; /* Light grey background for the features section */
+  padding: 50px 0; /* Add some padding above and below */
+}
+
+.features h2 {
+  color: #333; /* Dark grey color for the heading */
+  margin-bottom: 30px; /* Space below the heading */
+}
+
+.feature-lists {
+  display: flex; /* Use flexbox to create a row of feature cards */
+  justify-content: space-around; /* Spread out the cards evenly */
+  flex-wrap: wrap; /* Allow the cards to wrap on smaller screens */
+  gap: 20px; /* Add space between the cards */
+}
+
+.feature-card {
+  background: white; /* White background for the cards */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  width: 300px; /* Fixed width */
+  padding: 20px; /* Padding inside the cards */
+  list-style: none; /* Remove default list styling */
+  margin: 0; /* Remove default margin */
+}
+
+.feature-card:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Larger shadow on hover */
+  transform: translateY(-5px); /* Slightly raise the card */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.feature-card li {
+  margin-bottom: 15px; /* Space between list items */
+  font-weight: bold; /* Make the text bold */
+  color: #555; /* Slightly darker text color */
+}
+
+.feature-card li:last-child {
+  margin-bottom: 0; /* Remove margin from the last item */
+}
+
+/* .how-it-works {
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  background-color: #f8f8f8;
+  padding: 20px;
+  border-radius: 5px;
+  max-width: 600px;
+  margin: 0 auto;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.how-it-works h2 {
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.how-it-works p {
+  font-size: 16px;
+  line-height: 1.6;
+  text-align: center;
+} */
+/* Creative (pinky version) */
+/* .how-it-works {
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  color: #ffffff;
+  background: linear-gradient(45deg, #ff69b4, #ba55d3);
+  padding: 30px;
+  border-radius: 15px;
+  max-width: 600px;
+  margin: 0 auto;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  text-shadow: 1px 1px #000000;
+}
+
+.how-it-works h2 {
+  font-size: 28px;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #fff5ee;
+  text-transform: uppercase;
+}
+
+.how-it-works p {
+  font-size: 18px;
+  line-height: 1.8;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 10px;
+  border-radius: 10px;
+} */
+
+.how-it-works {
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  background-color: #f9f9f9;
+  padding: 40px;
+  border-radius: 8px;
+  max-width: 1000px;
+  margin: auto;
+  text-align: center;
+}
+@media (max-width: 600px) {
+  .how-it-works {
+    max-width: 800px;
+  }
+}
+.how-it-works h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.steps-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px; /* This adds space around items */
+}
+
+.step {
+  padding: 10px 20px;
+  background-color: #e7e7e7;
+  border-radius: 20px;
+}
+
+.arrow {
+  height: 1em; /* Scales the arrow with font size */
+  width: auto;
+  color: #333;
+}
+
+@media (max-width: 600px) {
+  .steps-container {
+    flex-direction: column;
+  }
+
+  .arrow {
+    transform: rotate(90deg); /* Rotates arrow for vertical layout */
+  }
+}
+
+/* Services (Design and Development) */
+.services {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+  background: #f4f4f4; /* Soft background for grouping */
+}
+
+.service-column {
+  flex-basis: 45%; /* Assigns width to each column */
+  background: #fff; /* White background for content */
+  padding: 20px;
+  border-radius: 8px; /* Soft edges */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* subtle shadow for depth */
+}
+
+.service-column h3 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.service-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.service-column ul li {
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd; /* Drawn line separator */
+  margin-bottom: -1px; /* Removes double-border effect */
+}
+
+.service-column ul li:last-child {
+  border-bottom: none; /* Removes the border from the last item */
+}
+
+@media (max-width: 768px) {
+  .services {
+    flex-direction: column;
+    align-items: center;
   }
   
-  .features h2 {
-    color: #333; /* Dark grey color for the heading */
-    margin-bottom: 30px; /* Space below the heading */
+  .service-column {
+    flex-basis: 80%; /* Adjusts width for mobile */
+    margin-bottom: 20px; /* Spacing between columns */
   }
-  
-  .feature-lists {
-    display: flex; /* Use flexbox to create a row of feature cards */
-    justify-content: space-around; /* Spread out the cards evenly */
-    flex-wrap: wrap; /* Allow the cards to wrap on smaller screens */
-    gap: 20px; /* Add space between the cards */
+}
+
+/* Pricing */
+.pricing {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* This makes the pricing card center vertically. Adjust height as needed. */
+  background-color: #f7f7f7; /* Soft background for the entire section */
+}
+
+.card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 350px;
+  padding: 20px;
+  text-align: center;
+}
+
+.card h3 {
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.card h2 {
+  font-size: 48px;
+  margin-bottom: 25px;
+}
+
+.card h2 span {
+  font-size: 24px;
+  color: #666;
+}
+
+.card ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 25px;
+}
+
+.card ul li {
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.card ul li:last-child {
+  border-bottom: none;
+}
+
+.btn-signup {
+  background-color: #22a6b3;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.3s;
+}
+
+.btn-signup:hover {
+  background-color: #0d8090;
+}
+/* Testimonials */
+.testimonials {
+  text-align: center;
+  padding: 20px;
+  background: #f9f9f9;
+}
+
+.testimonial-container {
+  position: relative;
+  height: 200px; /* Adjust height based on content */
+}
+
+.testimonial {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  opacity: 0; /* Testimonials start out invisible */
+  animation: fadeInOut 9s infinite; /* Adjust timing as needed */
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  background: white;
+  border-radius: 4px;
+}
+
+#testimonial1 {
+  animation-delay: 0s; /* First testimonial starts immediately */
+}
+
+#testimonial2 {
+  animation-delay: 3s; /* Second testimonial starts after 3s */
+}
+
+#testimonial3 {
+  animation-delay: 6s; /* Third testimonial starts after 6s */
+}
+
+@keyframes fadeInOut {
+  0%, 100% {
+    opacity: 0;
   }
-  
-  .feature-card {
-    background: white; /* White background for the cards */
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    width: 300px; /* Fixed width */
-    padding: 20px; /* Padding inside the cards */
-    list-style: none; /* Remove default list styling */
-    margin: 0; /* Remove default margin */
+  16.66%, 50% {
+    opacity: 1;
   }
-  
-  .feature-card:hover {
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Larger shadow on hover */
-    transform: translateY(-5px); /* Slightly raise the card */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+}
+
+h2 {
+  margin-bottom: 30px;
+}
+
+blockquote {
+  quotes: "“" "”" "‘" "’";
+}
+
+blockquote:before {
+  content: open-quote;
+}
+
+blockquote:after {
+  content: close-quote;
+}
+
+/* FAQs */
+.faq {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 50px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.faq h1 {
+  text-align: center;
+  color: #333;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+}
+
+.faq-item {
+  background: #fff;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.faq-question {
+  padding: 20px;
+  margin: 0;
+  background: #007bff;
+  color: white;
+  text-align: left;
+  border: none;
+  width: 100%;
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.faq-question:hover {
+  background-color: #0056b3;
+}
+
+.faq-answer {
+  padding: 20px;
+  display: none; /* Hide answers by default */
+  border-top: 1px solid #eee;
+  background: #f0f0f0;
+}
+
+.faq-answer p {
+  margin: 0;
+  color: #333;
+}
+
+/* JavaScript will toggle this class */
+.faq-answer.active {
+  display: block;
+}
+
+/* Footer */
+.site-footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.footer-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.social-links {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.social-links li {
+  margin: 0 10px;
+}
+
+.social-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.2em;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #1e90ff;
+}
+
+.social-links a:active {
+  color: #0d6efd;
+}
+
+/* Add a separator */
+.site-footer::before {
+  content: '';
+  display: block;
+  height: 1px;
+  background-color: #555;
+  width: 80%;
+  margin: 0 auto 30px;
+}
+
+/* Copyright text */
+.site-footer p {
+  font-size: 0.9em;
+  margin: 10px 0;
+}
+
+@media (max-width: 768px) {
+  .social-links {
+    flex-direction: column;
   }
-  
-  .feature-card li {
-    margin-bottom: 15px; /* Space between list items */
-    font-weight: bold; /* Make the text bold */
-    color: #555; /* Slightly darker text color */
+
+  .social-links li {
+    margin: 10px 0;
   }
-  
-  .feature-card li:last-child {
-    margin-bottom: 0; /* Remove margin from the last item */
-  }
-  
+}
