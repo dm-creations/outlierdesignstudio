@@ -59,6 +59,9 @@ textarea,
 select {
   font: inherit;
 }
+/* fonts */
+/* <link rel="stylesheet" href="https://use.typekit.net/lwx0fng.css"> */
+/* imported fonts include: Brandon Grotesque, Neulis Neue */
 
 /* Remove all animations and transitions for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
