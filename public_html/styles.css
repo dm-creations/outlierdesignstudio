@@ -81,6 +81,13 @@ select {
     justify-content: center;
     align-items: center;
 }
+.hero h2,
+.hero h3 {
+    color: #fff;
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 20px;
+}
 .hero button {
     background-color: #fff;
     border: none;
@@ -486,6 +493,36 @@ select {
   }
 }
 
+.book-now {
+  /* background-color: #22a6b3; */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+}
+.book-now a {
+  color: white;
+  text-decoration: none;
+}
+.book-now a:hover  {
+  background-color: #0d8090;
+}
+
+.book-now button {
+  background-color: #22a6b3;
+  color: white;
+  border: none;
+  margin: 10px auto;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.3s;
+}
 h2 {
   margin-bottom: 30px;
 }
