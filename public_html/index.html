@@ -8,6 +8,7 @@
 <link rel="stylesheet" href="https://use.typekit.net/lwx0fng.css">
 <link rel="stylesheet" href="styles.css">
 <script src="js/gsap.min.js" async></script>
+<script src="js/ScrollToPlugin.min.js" async></script>
 </head>
 <body>
 	<!-- <header>
@@ -16,9 +17,10 @@
 	</header> -->
 
 	<section class="hero">
-		<h2>Design and Development subscriptions for ecommerce and content creators. Pause or cancel anytime.</h2>
+		<h2>Subscription design + development for creative businesses </h2>
 		<button>See plans</button>
-		<h3>You picture it we&#39;ll build it</h3>
+		<h3>Streamline your business with unlimited design and development. Pause or cancel anytime.</h3>
+		<h4>Envision it, we&#39;ll bring it to life</h4>
 	</section>
 
 	<section class="nav">
@@ -28,12 +30,12 @@
 			</div>
 			<div class="nav-links">
 				<ul>
-					<li><a href="#home">Benefits</a></li>
-					<li><a href="#services">Our Work</a></li>
-					<li><a href="#pricing">How it Works</a></li>
-					<li><a href="#testimonials">Pricing</a></li>
+					<li><a href="#benefits">Benefits</a></li>
+					<li><a href="#our-work">Our Work</a></li>
+					<li><a href="#how-it-works">How it Works</a></li>
+					<li><a href="#pricing">Pricing</a></li>
 					<li><a href="#faq">FAQs</a></li>
-					<li><a href="#contact">AI Services</a></li>
+					<li><a href="#ai-services">AI Services</a></li>
 				</ul>
 			</div>
 		</div>
@@ -62,7 +64,7 @@
 		</div>
 	</section>
 
-	<section class="features">
+	<section class="features" id="benefits">
 		<h2>Features and Benefits</h2>
 		<div class="feature-lists">
 			<ul class="feature-card">
@@ -82,7 +84,7 @@
 		</div>
 	</section>
 
-	<section class="how-it-works">
+	<section class="how-it-works" id="how-it-works">
 		<h2>How it Works</h2>
 		<div class="steps-container">
 		  <div class="step">Subscribe</div>
@@ -129,7 +131,7 @@
 	</section>
 	  
 
-	<section class="pricing">
+	<section class="pricing" id="pricing">
 		<div class="card">
 			<h3>Pricing:</h3>
 			<h2>£2500 <span>/ month</span></h2>
@@ -169,7 +171,7 @@
 		</a>
 	</section>
 
-	<section class="faq">
+	<section class="faq" id="faq">
 		<h1>FAQs</h1>
 		<div class="faq-item">
 			<button class="faq-question">What payment methods do you accept?</button>
@@ -209,20 +211,44 @@
 </body>
 
 <script>
+	gsap.registerPlugin(ScrollToPlugin)
 	const nav = document.querySelector('.nav');
 	const logo = document.querySelector('.logo');
 
 	// LISTENERS
 	logo.addEventListener('click', () => {
-		if (nav.classList.contains('nav-active') && window.innerWidth > 700) {
+		if (window.innerWidth > 700) { return }
+		if (nav.classList.contains('nav-active')) {
 			closeMenu();
 		} else {
 			openMenu();
 		}
 	});
+	document.querySelectorAll('.nav-links ul li a').forEach((link) => {
+		link.addEventListener('click', (e) => {
+			console.log(e.target.getAttribute('href'));
+			e.preventDefault();
+			if (nav.classList.contains('nav-active') && window.innerWidth < 700) {
+				closeMenu();
+			} 
+			// gsap scrollTo the section
+			gsap.to(window, {
+				duration: 1,
+				scrollTo: {
+					y: e.target.getAttribute('href'),
+					offsetY: 55 // Offset for the fixed nav
+				},
+				ease: 'power2.inOut'
+			});
+		});
+	});
 	window.addEventListener('resize', () => {
-		if (nav.classList.contains('nav-active') && window.innerWidth > 700) {
+		if (window.innerWidth > 700) {
+			if (nav.classList.contains('nav-active')) {
+				return;
+			}
 			// closeMenu();
+			openMenu();
 		}
 	});
 
