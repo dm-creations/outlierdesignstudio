@@ -59,6 +59,7 @@ textarea,
 select {
   font: inherit;
 }
+
 /* fonts */
 /* <link rel="stylesheet" href="https://use.typekit.net/lwx0fng.css"> */
 /* imported fonts include: Brandon Grotesque, Neulis Neue */
@@ -74,111 +75,203 @@ select {
 }
 
 .hero {
-    background-image: url("img/hero.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  background-image: url("img/hero.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
+
 .hero h2,
 .hero h3 {
-    color: #fff;
-    font-size: 3rem;
-    text-align: center;
-    margin-bottom: 20px;
+  color: #fff;
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 20px;
 }
+
 .hero button {
-    background-color: #fff;
-    border: none;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    padding: 10px 20px;
-    font-size: 1.2rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.25s ease-in-out;
+  background-color: #fff;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease-in-out;
 }
+
 .hero button:hover {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
+
 @media (max-width: 768px) {
-    .hero {
-        height: 100%;
-    }
+  .hero {
+    height: 100%;
+  }
 }
-.intro {
-    /* off-white background colour: */
-    background-color: #f8f8f8;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    margin: 20px;
-    text-align: center;
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0);
+  z-index: 1000;
+  height: 55px;
+  transition: background-color 0.5s ease;
 }
-.portfolio {
-    /* portfolio section with four square images and a background image with a blur over it */
-    position: relative;
-    background-image: url("img/portfolio-bg.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    min-height: 50vh;
+
+.logo {
+  /* logo size: 140px x 45px */
+  float: left;
+  padding: 5px 0;
+  margin-left: 0;
+}
+.logo {
+  background: rgba(255, 255, 255, 0.4); /* Translucent white background */
+  backdrop-filter: blur(5px); /* This will give the feather effect to the background */
+  -webkit-backdrop-filter: blur(10px); /*For Safari compatibility */
+  transition: all 0.5s ease;
+  box-shadow: 0 0 15px 15px rgba(255, 255, 255, 0.4);
+  border-radius: 0 8px 8px 8px;
+}
+
+.logo > img {
+  display: block;
+}
+
+@media (min-width: 700px) {
+  .logo {
+    backdrop-filter: unset;
+    -webkit-backdrop-filter: unset;
+    box-shadow: unset;
+    border-radius: unset;
+  }
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+}
+
+.nav-links ul li {
+  opacity: 0;
+}
+
+.nav ul {
+  margin-right: calc(140px / 2);
+}
+@media (min-width: 700px) {
+  .nav {
+    background-color: #fff;
+    transition: background-color 0.5s ease;
+  }
+  .nav-links {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
+    height: 55px;
+  }
+  .nav ul {
+    margin-right: 0;
+    display: inline-flex;
+    gap: 25px;
+  }
+  .nav-links ul li {
+    opacity: 1;
+  }
+}
+
+.nav a {
+  color: #202223;
+  text-align: center;
+  font-family: Brandon Grotesque;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5rem; /* 150% */
+  letter-spacing: 0.1px;
+}
+
+.intro {
+  /* off-white background colour: */
+  background-color: #f8f8f8;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  margin: 20px;
+  text-align: center;
+}
+
+.portfolio {
+  /* portfolio section with four square images and a background image with a blur over it */
+  position: relative;
+  background-image: url("img/portfolio-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .portfolio-mask {
-    /* mask to blur the background image */
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    backdrop-filter: blur(10px);
-    z-index: 1;
+  /* mask to blur the background image */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(10px);
+  z-index: 1;
 }
 
 .image-gallery {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    z-index: 2;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  z-index: 2;
 }
 
 .img-card {
-    /* image card with a background image and a hover effect */
-    position: relative;
-    width: 200px;
-    height: 200px;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    border-radius: 5px;
-    margin: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    transition: all 0.25s ease-in-out;
+  /* image card with a background image and a hover effect */
+  position: relative;
+  width: 200px;
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 5px;
+  margin: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.25s ease-in-out;
 }
+
 .img-card:hover {
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-    transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  transform: scale(1.05);
 }
+
 .image-gallery img {
-    /* images in the gallery */
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 5px;
-    margin: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    transition: all 0.25s ease-in-out;
+  /* images in the gallery */
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.25s ease-in-out;
 }
 
 /* .features {
@@ -193,47 +286,70 @@ select {
 
 /* General styling for the features section */
 .features {
-  text-align: center; /* Center align the text */
-  background: #f7f7f7; /* Light grey background for the features section */
-  padding: 50px 0; /* Add some padding above and below */
+  text-align: center;
+  /* Center align the text */
+  background: #f7f7f7;
+  /* Light grey background for the features section */
+  padding: 50px 0;
+  /* Add some padding above and below */
 }
 
 .features h2 {
-  color: #333; /* Dark grey color for the heading */
-  margin-bottom: 30px; /* Space below the heading */
+  color: #333;
+  /* Dark grey color for the heading */
+  margin-bottom: 30px;
+  /* Space below the heading */
 }
 
 .feature-lists {
-  display: flex; /* Use flexbox to create a row of feature cards */
-  justify-content: space-around; /* Spread out the cards evenly */
-  flex-wrap: wrap; /* Allow the cards to wrap on smaller screens */
-  gap: 20px; /* Add space between the cards */
+  display: flex;
+  /* Use flexbox to create a row of feature cards */
+  justify-content: space-around;
+  /* Spread out the cards evenly */
+  flex-wrap: wrap;
+  /* Allow the cards to wrap on smaller screens */
+  gap: 20px;
+  /* Add space between the cards */
 }
 
 .feature-card {
-  background: white; /* White background for the cards */
-  border-radius: 8px; /* Rounded corners */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  width: 300px; /* Fixed width */
-  padding: 20px; /* Padding inside the cards */
-  list-style: none; /* Remove default list styling */
-  margin: 0; /* Remove default margin */
+  background: white;
+  /* White background for the cards */
+  border-radius: 8px;
+  /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* Subtle shadow */
+  width: 300px;
+  /* Fixed width */
+  padding: 20px;
+  /* Padding inside the cards */
+  list-style: none;
+  /* Remove default list styling */
+  margin: 0;
+  /* Remove default margin */
 }
 
 .feature-card:hover {
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Larger shadow on hover */
-  transform: translateY(-5px); /* Slightly raise the card */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  /* Larger shadow on hover */
+  transform: translateY(-5px);
+  /* Slightly raise the card */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  /* Smooth transition for hover effects */
 }
 
 .feature-card li {
-  margin-bottom: 15px; /* Space between list items */
-  font-weight: bold; /* Make the text bold */
-  color: #555; /* Slightly darker text color */
+  margin-bottom: 15px;
+  /* Space between list items */
+  font-weight: bold;
+  /* Make the text bold */
+  color: #555;
+  /* Slightly darker text color */
 }
 
 .feature-card li:last-child {
-  margin-bottom: 0; /* Remove margin from the last item */
+  margin-bottom: 0;
+  /* Remove margin from the last item */
 }
 
 /* .how-it-works {
@@ -298,11 +414,13 @@ select {
   margin: auto;
   text-align: center;
 }
+
 @media (max-width: 600px) {
   .how-it-works {
     max-width: 800px;
   }
 }
+
 .how-it-works h2 {
   font-size: 24px;
   margin-bottom: 20px;
@@ -313,7 +431,8 @@ select {
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 16px; /* This adds space around items */
+  gap: 16px;
+  /* This adds space around items */
 }
 
 .step {
@@ -323,7 +442,8 @@ select {
 }
 
 .arrow {
-  height: 1em; /* Scales the arrow with font size */
+  height: 1em;
+  /* Scales the arrow with font size */
   width: auto;
   color: #333;
 }
@@ -334,7 +454,8 @@ select {
   }
 
   .arrow {
-    transform: rotate(90deg); /* Rotates arrow for vertical layout */
+    transform: rotate(90deg);
+    /* Rotates arrow for vertical layout */
   }
 }
 
@@ -343,15 +464,20 @@ select {
   display: flex;
   justify-content: space-around;
   padding: 20px;
-  background: #f4f4f4; /* Soft background for grouping */
+  background: #f4f4f4;
+  /* Soft background for grouping */
 }
 
 .service-column {
-  flex-basis: 45%; /* Assigns width to each column */
-  background: #fff; /* White background for content */
+  flex-basis: 45%;
+  /* Assigns width to each column */
+  background: #fff;
+  /* White background for content */
   padding: 20px;
-  border-radius: 8px; /* Soft edges */
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* subtle shadow for depth */
+  border-radius: 8px;
+  /* Soft edges */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  /* subtle shadow for depth */
 }
 
 .service-column h3 {
@@ -367,12 +493,15 @@ select {
 
 .service-column ul li {
   padding: 10px 0;
-  border-bottom: 1px solid #ddd; /* Drawn line separator */
-  margin-bottom: -1px; /* Removes double-border effect */
+  border-bottom: 1px solid #ddd;
+  /* Drawn line separator */
+  margin-bottom: -1px;
+  /* Removes double-border effect */
 }
 
 .service-column ul li:last-child {
-  border-bottom: none; /* Removes the border from the last item */
+  border-bottom: none;
+  /* Removes the border from the last item */
 }
 
 @media (max-width: 768px) {
@@ -380,10 +509,12 @@ select {
     flex-direction: column;
     align-items: center;
   }
-  
+
   .service-column {
-    flex-basis: 80%; /* Adjusts width for mobile */
-    margin-bottom: 20px; /* Spacing between columns */
+    flex-basis: 80%;
+    /* Adjusts width for mobile */
+    margin-bottom: 20px;
+    /* Spacing between columns */
   }
 }
 
@@ -392,8 +523,10 @@ select {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* This makes the pricing card center vertically. Adjust height as needed. */
-  background-color: #f7f7f7; /* Soft background for the entire section */
+  height: 100vh;
+  /* This makes the pricing card center vertically. Adjust height as needed. */
+  background-color: #f7f7f7;
+  /* Soft background for the entire section */
 }
 
 .card {
@@ -449,6 +582,7 @@ select {
 .btn-signup:hover {
   background-color: #0d8090;
 }
+
 /* Testimonials */
 .testimonials {
   text-align: center;
@@ -458,7 +592,8 @@ select {
 
 .testimonial-container {
   position: relative;
-  height: 200px; /* Adjust height based on content */
+  height: 200px;
+  /* Adjust height based on content */
 }
 
 .testimonial {
@@ -467,31 +602,40 @@ select {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 100%;
-  opacity: 0; /* Testimonials start out invisible */
-  animation: fadeInOut 9s infinite; /* Adjust timing as needed */
+  opacity: 0;
+  /* Testimonials start out invisible */
+  animation: fadeInOut 9s infinite;
+  /* Adjust timing as needed */
   padding: 20px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   background: white;
   border-radius: 4px;
 }
 
 #testimonial1 {
-  animation-delay: 0s; /* First testimonial starts immediately */
+  animation-delay: 0s;
+  /* First testimonial starts immediately */
 }
 
 #testimonial2 {
-  animation-delay: 3s; /* Second testimonial starts after 3s */
+  animation-delay: 3s;
+  /* Second testimonial starts after 3s */
 }
 
 #testimonial3 {
-  animation-delay: 6s; /* Third testimonial starts after 6s */
+  animation-delay: 6s;
+  /* Third testimonial starts after 6s */
 }
 
 @keyframes fadeInOut {
-  0%, 100% {
+
+  0%,
+  100% {
     opacity: 0;
   }
-  16.66%, 50% {
+
+  16.66%,
+  50% {
     opacity: 1;
   }
 }
@@ -507,11 +651,13 @@ select {
   display: flex;
   justify-content: center;
 }
+
 .book-now a {
   color: white;
   text-decoration: none;
 }
-.book-now a:hover  {
+
+.book-now a:hover {
   background-color: #0d8090;
 }
 
@@ -526,6 +672,7 @@ select {
   font-size: 18px;
   transition: background-color 0.3s;
 }
+
 h2 {
   margin-bottom: 30px;
 }
@@ -588,7 +735,8 @@ blockquote:after {
 
 .faq-answer {
   padding: 20px;
-  display: none; /* Hide answers by default */
+  display: none;
+  /* Hide answers by default */
   border-top: 1px solid #eee;
   background: #f0f0f0;
 }

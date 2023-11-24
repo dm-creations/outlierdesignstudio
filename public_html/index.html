@@ -7,6 +7,7 @@
 <!-- Add your CSS file link here -->
 <link rel="stylesheet" href="https://use.typekit.net/lwx0fng.css">
 <link rel="stylesheet" href="styles.css">
+<script src="js/gsap.min.js" async></script>
 </head>
 <body>
 	<!-- <header>
@@ -19,6 +20,71 @@
 		<button>See plans</button>
 		<h3>You picture it we&#39;ll build it</h3>
 	</section>
+
+	<section class="nav">
+		<div class="nav-container">
+			<div class="logo">
+				<img src="img/logo-ods-black.png" alt="Outlier Design Studio Logo">
+			</div>
+			<div class="nav-links">
+				<ul>
+					<li><a href="#home">Benefits</a></li>
+					<li><a href="#services">Our Work</a></li>
+					<li><a href="#pricing">How it Works</a></li>
+					<li><a href="#testimonials">Pricing</a></li>
+					<li><a href="#faq">FAQs</a></li>
+					<li><a href="#contact">AI Services</a></li>
+				</ul>
+			</div>
+		</div>
+	</section>
+
+	<script>
+		const nav = document.querySelector('.nav');
+		const logo = document.querySelector('.logo');
+
+		logo.addEventListener('click', () => {
+			console.log('logo clicked')
+			if (nav.classList.contains('nav-active')) {
+				// Closing animation sequence
+				// Start by animating the navbar height and background color back to original
+				gsap.to('.nav', {
+					duration: (0.3 * 2.5),
+					height: '55px', // Assuming 55px is the original height of the nav
+					backgroundColor: 'rgba(255,255,255,0)', // Make the background color transparent again
+					ease: 'power2.inOut'
+				});
+				gsap.to('.nav-links ul li', {
+						duration: 0.3,
+						opacity: 0,
+						stagger: -0.08, // Negative stagger value to reverse the direction of the stagger
+						ease: 'power1.out'
+					});
+			} else {
+				// Opening animation sequence
+				// Start by setting the initial state of list items to invisible
+				gsap.set('.nav-links ul li', { opacity: 0 });
+				// Then animate the navbar height and background color
+				gsap.to('.nav', {
+					duration: 0.3,
+					height: 'auto', // Expand the height to fit the content
+					backgroundColor: 'rgba(255,255,255,1)', // Set the background color to white
+					ease: 'power2.inOut',
+					onComplete: () => {
+						// Finally stagger fade in the list items
+						gsap.to('.nav-links ul li', {
+							duration: 0.3,
+							opacity: 1,
+							stagger: 0.08,
+							ease: 'power1.out'
+						});
+					}
+				});
+			}
+			nav.classList.toggle('nav-active');
+		});
+
+	</script>
 
 	<section class="intro">
 		<h2>We are a design and development solution, able to provide for a single subscription what would normally come from 2 separate job roles.</h2>
@@ -189,8 +255,25 @@
 	</footer>
 	  
 	
+	<div id="viewportWidthBox" style="position: fixed; bottom: 0; left: 0; background-color: grey; padding: 10px;">
+		Viewport Width: <span id="viewportWidth"></span>
+	</div>
+	   
 </body>
 <script>
+	// Output the viewport width in the box
+	const viewportWidthBox = document.getElementById('viewportWidthBox');
+	const viewportWidthElement = document.getElementById('viewportWidth');
+
+	function updateViewportWidth() {
+		const viewportWidth = window.innerWidth;
+		viewportWidthElement.textContent = viewportWidth;
+	}
+
+	updateViewportWidth();
+	window.addEventListener('resize', updateViewportWidth);
+	// End outputting the viewport width in the box
+
 	document.querySelectorAll('.faq-question').forEach((question) => {
     question.addEventListener('click', () => {
         const answer = question.nextElementSibling;
