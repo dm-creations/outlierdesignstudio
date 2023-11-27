@@ -9,18 +9,24 @@
 <link rel="stylesheet" href="style.css">
 <script src="js/gsap.min.js"></script>
 <script src="js/ScrollToPlugin.min.js"></script>
+<script src="js/ScrollTrigger.min.js"></script>
 </head>
 <body>
-	<!-- <header>
-		<h1>Star Quality Solutions to Suit Your Business Needs</h1>
-		<h1>Two worlds, One subscription.</h1>
-	</header> -->
-
 	<section class="hero">
-		<h2>Subscription design + development for creative businesses </h2>
-		<button>See plans</button>
-		<h3>Streamline your business with unlimited design and development. Pause or cancel anytime.</h3>
-		<h4>Envision it, we&#39;ll bring it to life</h4>
+		<div class="hero-text">
+			<h2>Subscription design + development for creative businesses </h2>
+			<h3>Streamline your business with unlimited design and development. Pause or cancel anytime.</h3>
+			<div class="button-and-text">
+				<a href="#pricing">
+					<button>See Plans</button>
+				</a>
+				<h4>Envision it, we&#39;ll bring it to life</h4>
+			</div>
+		</div>
+		<div class="animated-monitor">
+			<div class="monitor">
+				<img src="img/desktop-computer-brandless.png" alt="Brandless Desktop Computer">
+			</div>
 	</section>
 
 	<section class="nav">
@@ -212,6 +218,8 @@
 
 <script>
 	gsap.registerPlugin(ScrollToPlugin)
+	gsap.registerPlugin(ScrollTrigger)
+
 	const nav = document.querySelector('.nav');
 	const logo = document.querySelector('.logo');
 
@@ -224,9 +232,12 @@
 			openMenu();
 		}
 	});
-	document.querySelectorAll('.nav-links ul li a').forEach((link) => {
+	document.querySelectorAll('.nav-links ul li a, .button-and-text a').forEach((link) => {
+		link.addEventListener('click', (e) => {
+			e.preventDefault();
+		});
 		link.addEventListener('pointerdown', (e) => {
-			console.log(e.target.getAttribute('href'));
+			console.log(e.currentTarget.getAttribute('href'));
 			e.preventDefault();
 			if (nav.classList.contains('nav-active') && window.innerWidth < 700) {
 				closeMenu();
@@ -235,7 +246,7 @@
 			gsap.to(window, {
 				duration: 1,
 				scrollTo: {
-					y: e.target.getAttribute('href'),
+					y: e.currentTarget.getAttribute('href'),
 					offsetY: 55 // Offset for the fixed nav
 				},
 				ease: 'power2.inOut'
@@ -251,6 +262,20 @@
 			openMenu();
 		}
 	});
+
+	// GSAP STANDALONE ANIMATIONS
+
+	// Create the animation
+	if(window.innerWidth > 700) {
+		gsap.to(".nav", {
+			backgroundColor: "white",
+			scrollTrigger: {
+				start: "top top",
+				end: "bottom top",
+				scrub: true
+			}
+		});
+	}
 
 	// FUNCTIONS
 	function closeMenu() {
