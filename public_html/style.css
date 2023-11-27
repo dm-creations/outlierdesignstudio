@@ -80,6 +80,7 @@ select {
   background-position: center;
   background-repeat: no-repeat;
   height: 100vh;
+  padding-top: 55px;
   display: flex;
   flex-direction: column;
   justify-content: center;
