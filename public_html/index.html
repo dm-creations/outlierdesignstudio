@@ -216,7 +216,7 @@
 	const logo = document.querySelector('.logo');
 
 	// LISTENERS
-	logo.addEventListener('click', () => {
+	logo.addEventListener('pointerdown', () => {
 		if (window.innerWidth > 700) { return }
 		if (nav.classList.contains('nav-active')) {
 			closeMenu();
@@ -225,7 +225,7 @@
 		}
 	});
 	document.querySelectorAll('.nav-links ul li a').forEach((link) => {
-		link.addEventListener('click', (e) => {
+		link.addEventListener('pointerdown', (e) => {
 			console.log(e.target.getAttribute('href'));
 			e.preventDefault();
 			if (nav.classList.contains('nav-active') && window.innerWidth < 700) {
@@ -295,7 +295,7 @@
 </script>
 <script>
 	document.querySelectorAll('.faq-question').forEach((question) => {
-    question.addEventListener('click', () => {
+    question.addEventListener('pointerdown', () => {
         const answer = question.nextElementSibling;
         answer.classList.toggle('active');
         
