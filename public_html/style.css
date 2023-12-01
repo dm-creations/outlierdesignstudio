@@ -445,12 +445,24 @@ select {
 
 /* Start Our Work Section */
 .our-work {
-  background: rgba(105, 144, 250);
+  position: relative;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
+}
+
+.our-work-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  /* top: 30px; */
+  z-index: 0;
+  background: url("img/noise-effect.png"), lightgray 0% 0% / 100px 100px repeat;
+  background-color: rgba(105, 144, 250, 0.9);
 }
 
 .our-work h2 {
+  position: relative;
   color: #FFF;
   text-align: center;
   font-family: "neulis-neue";
@@ -459,14 +471,17 @@ select {
   font-weight: 700;
   line-height: 3.75rem;
   letter-spacing: -1px;
+  z-index: 3;
 }
 
 .works-container {
+  position: relative;
   display: flex;
   max-width: 1110px;
   margin: 0 auto;
   padding-bottom: 70px;
   gap: 30px;
+  z-index: 3;
 }
 
 .work-card {
