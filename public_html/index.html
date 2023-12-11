@@ -55,13 +55,13 @@
 			while we manage the techy distraction.
 		</h5>
 		<div class="feature-lists">
-			<div class="wave-container">
+			<div class="wave-container-top">
 				<svg xmlns="http://www.w3.org/2000/svg" width="100vw" height="100%" viewBox="0 0 1440 382" fill="none">
 					<path fill-rule="evenodd" clip-rule="evenodd" d="M0 166.331L60 130.387C120 94.4419 240 22.5524 360 4.57997C480 -13.3924 600 22.5524 720 94.4419C840 166.331 960 31 1080 31C1200 31 1320 166.331 1380 112.414L1440 58.4971V382H1380C1320 382 1200 382 1080 382C960 382 840 382 720 382C600 382 480 382 360 382C240 382 120 382 60 382H0V166.331Z" fill="#6990FA"/>
 				</svg>
-				<svg xmlns="http://www.w3.org/2000/svg" width="100vw" height="100%" viewBox="0 0 1440 382" fill="none" style="margin-top:-120px">
+				<!-- <svg xmlns="http://www.w3.org/2000/svg" width="100vw" height="100%" viewBox="0 0 1440 382" fill="none" style="margin-top:-120px">
 					<path fill-rule="evenodd" clip-rule="evenodd" d="M1440 215.669L1380 251.613C1320 287.558 1200 359.448 1080 377.42C960 395.392 840 359.448 720 287.558C600 215.669 480 351 360 351C240 351 120 215.669 60 269.586L0 323.503V0H60C120 0 240 0 360 0C480 0 600 0 720 0C840 0 960 0 1080 0C1200 0 1320 0 1380 0H1440V215.669Z" fill="#6990FA"/>
-				</svg>
+				</svg> -->
 			</div>
 			<div class="spacer" style="height:calc(100vw / 13.5);width:100%;"></div>
 			<div class="feature-grid">
@@ -251,23 +251,61 @@
 	  
 
 	<section class="pricing" id="pricing">
-		<div class="card">
-			<h3>Pricing:</h3>
-			<h2>£2500 <span>/ month</span></h2>
-			<ul>
-				<li>One single or combined request at a time</li>
-				<li>72 hour turnaround</li>
-				<li>Easy card payments</li>
-				<li>Pause or cancel anytime</li>
-			</ul>
-			<a href="https://buy.stripe.com/eVa14s8dE5eU1bO288" target="_blank">
-				<button class="btn-signup">Sign Up</button>
-			</a>
+		<h2 class="section-title">Subscription Plans</h2>
+		<h5 class="section-subtitle">Select a plan that fits your business needs</h5>
+		<div class="subscription-plans-container">
+			<div class="service-column">
+				<div class="offer-badge">
+					<p>Most Popular</p>
+				</div>
+				<div class="price-and-title">
+					<h3>£2500<span class="h5">/mo</span></h3>
+					<p>Standard Subscription</p>
+				</div>
+				<p>What you get:</p>
+				<ul>
+					<li>One design <strong>OR</strong> development requests at a time</li>
+					<li>72 hour turnaround</li>
+					<li>Easy card payments</li>
+					<li>Pause or cancel anytime</li>
+				</ul>
+				<a class="cta-button" href="https://buy.stripe.com/eVa14s8dE5eU1bO288" target="_blank">
+					<button class="btn-book">Sign up now</button>
+				</a>
+			</div>
+			<div class="service-column">
+				<div class="price-and-title">
+					<h3>£3000<span class="h5">/mo</span></h3>
+					<p>Pro Subscription</p>
+				</div>
+				<p>What you get:</p>
+				<ul>
+					<li>One design <strong>AND</strong> development requests at a time</li>
+					<li>72 hour turnaround</li>
+					<li>Easy card payments</li>
+					<li>Pause or cancel anytime</li>
+				</ul>
+				<a class="cta-button" href="https://buy.stripe.com/dR67sQ65w36Mg6I9AB" target="_blank">
+					<button class="btn-book">Sign up now</button>
+				</a>
+			</div>
+		</div>
+		<div class="wave-container-bottom">
+			<svg xmlns="http://www.w3.org/2000/svg" width="100vw" height="100%" viewBox="0 0 1440 330" fill="none">
+				<path fill-rule="evenodd" clip-rule="evenodd" d="M1449.03 284.87L1328.33 246.906C1245.86 219.806 1169.27 218.653 1048.44 235.55C927.608 252.447 845.833 337.942 725 270.354C604.167 202.765 483.333 330 362.5 330C241.667 330 120.833 202.765 60.4167 253.457L0 304.148L0 0L60.4167 0C120.833 0 241.667 0 362.5 0C483.333 0 604.167 0 725 0C845.833 0 966.667 0 1087.5 0C1208.33 0 1329.17 0 1389.58 0L1450 0L1449.03 284.87Z" fill="#FBEE91"/>
+			</svg>
 		</div>
 	</section>
 
-	<section class="testimonials">
-		<h2>Testimonials</h2>
+	<section class="ai-services">
+		<div class="ai-services-container"></div>
+		<div class="badge"><p>Add-on</p></div>
+		<img src="img/icon/robot.svg" alt="Robot Icon">
+		<h2>AI Automation Services</h2>
+		<h5>Get ahead of the game or get left behind. Add our AI services to your plan to enhance the operations of your business.</h5>
+	</section>
+
+	<!-- <section class="testimonials">
 		<div class="testimonial-container">
 		  <article class="testimonial" id="testimonial1">
 			<p>Carrie at x company</p>
@@ -282,48 +320,44 @@
 			<blockquote>The team exceeded our expectations.</blockquote>
 		  </article>
 		</div>
-	</section>
+	</section> -->
 
-	<section class="book-now">
-		<a href="https://calendly.com/outlierdesignstudio/outlier-design-studio-intro" target="_blank">
-			<button class="btn-book">Book Now</button>
-		</a>
-	</section>
-
-	<section class="faq" id="faq">
-		<h1>FAQs</h1>
-		<div class="faq-item">
-			<button class="faq-question">What payment methods do you accept?</button>
-			<div class="faq-answer">
-				<p>We accept all major credit cards, PayPal, and bank transfers.</p>
+	<section class="faqs" id="faqs">
+		<h2>Frequently Asked Questions</h2>
+		<div class="faq-items">
+			<div class="faq-item">
+				<button class="faq-question">What technologies or platforms do you use?</button>
+				<div class="faq-answer">
+					<p>Our designs are produced in We use a wide range of technologies for design and development. Whilst we are happy to edit and update your existing components using your exsting frontend framework (eg React, Vue, Svelte, Angular), we typically create our component code from scratch.</p>
+				</div>
 			</div>
-		</div>
-		<div class="faq-item">
-			<button class="faq-question">Can I upgrade my plan at any time?</button>
-			<div class="faq-answer">
-				<p>Yes, you can upgrade your plan at any time through your account dashboard.</p>
+			<div class="faq-item">
+				<button class="faq-question">Can I request changes or updates ?</button>
+				<div class="faq-answer">
+					<p>Yes, you can request changes to existing tasks as often as you like, however each update will reset the 72 hour timer.</p>
+				</div>
 			</div>
+			<!-- <div class="faq-item">
+				<button class="faq-question">Do you offer customer support?</button>
+				<div class="faq-answer">
+					<p>Customer support is available 24/7 via email, phone, and live chat.</p>
+				</div>
+			</div> -->
+			<!-- More FAQ items can go here -->
 		</div>
-		<div class="faq-item">
-			<button class="faq-question">Do you offer customer support?</button>
-			<div class="faq-answer">
-				<p>Customer support is available 24/7 via email, phone, and live chat.</p>
-			</div>
-		</div>
-		<!-- More FAQ items can go here -->
 	</section>
 		
 	<footer class="site-footer">
 		<div class="footer-content">
-		  <p>Connect with us:</p>
-		  <ul class="social-links">
+		  <!-- <p>Connect with us:</p> -->
+		  <!-- <ul class="social-links">
 			<li><a href="https://twitter.com" target="_blank">Twitter</a></li>
 			<li><a href="https://facebook.com" target="_blank">Facebook</a></li>
 			<li><a href="https://instagram.com" target="_blank">Instagram</a></li>
 			<li><a href="https://linkedin.com" target="_blank">LinkedIn</a></li>
-		  </ul>
+		  </ul> -->
 		  <p class="copyright">
-			&copy; Copyright outlierdesignstudio.co.uk <span id="ytd">2023</span>
+			&copy; <span id="ytd">2023</span> Copyright Outlier Design Studio LTD. All rights reserved.
 		  </p>
 		</div>
 	</footer>   

@@ -43,13 +43,19 @@ li {
   font-family: "brandon-grotesque";
   margin: 0;
 }
+
+strong {
+  font-weight: 700;
+}
+
 h3 {
   font-size: 3rem;
   line-height: 3.75rem;
 }
-h5 {
+h5, .h5 {
   font-size: 0.875rem;
   line-height: 1.25rem;
+  margin: 0;
 }
 p {
   font-size: 1rem;
@@ -73,6 +79,10 @@ body {
   scroll-behavior: smooth;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
+}
+
+section {
+  position: relative;
 }
 
 /* Remove text-decoration on links */
@@ -309,6 +319,7 @@ section h2 {
 
 /* Service Column */
 .service-column {
+  position: relative;
   background: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 40px 45px 60px;
@@ -319,6 +330,7 @@ section h2 {
 .service-column img {
   width: 56px;
   height: 56px;
+  margin-left: auto;
 }
 .service-column h4 {
   text-align: start;
@@ -339,6 +351,67 @@ section h2 {
   }
 }
 /* End Service Column */
+
+/* Start Offer Badge */
+.offer-badge {
+  position: absolute;
+  width: 133px;
+  height: 80px;
+  left: -40px;
+  top: -10px;
+  transform: rotate(-26.371deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-shrink: 0;
+  border-radius: 10px;
+  background-color: #000;
+}
+
+.offer-badge p {
+  color: #FFF;
+  text-align: center;
+  font-family: "neulis-neue";
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px; /* 100% */
+  letter-spacing: 0.1px;
+}
+
+@media (min-width: 700px) {
+  .offer-badge {
+    width: 233px;
+    left: -80px;
+    top: -10px;
+  }
+  .offer-badge p {
+  }
+}
+/* End Offer Badge */
+
+/* Normal Badge */
+.badge {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 172.5px;
+  height: 47.382px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  background: #202223;
+}
+
+.badge p {
+  color: #FFF;
+  text-align: center;
+  font-family: "neulis-neue";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 1.5rem;
+  letter-spacing: 0.1px; 
+}
 /* **/
 /* End Components */
 /* **/
@@ -616,10 +689,10 @@ section h2 {
   gap: 20px;
 }
 
-.feature-lists .wave-container {
+.feature-lists .wave-container-top {
   position: absolute;
   z-index: 1;
-  top: 0;
+  top: 15px;
 }
 
 .benefits .feature-grid {
@@ -628,6 +701,13 @@ section h2 {
 }
 .feature-grid h4 {
   text-align: start;;
+}
+@media (min-width: 700px) {
+  .feature-lists .wave-container-top {
+    position: absolute;
+    z-index: 1;
+    top: 5px;
+  }
 }
 /* End Benefits Section */
 
@@ -651,6 +731,8 @@ section h2 {
 .our-work h2 {
   position: relative;
   color: #FFF;
+  margin-top: 20px;
+  margin-bottom: 30px;
   z-index: 3;
 }
 
@@ -784,67 +866,137 @@ section h2 {
 /* Pricing */
 .pricing {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: #fbee91;
+  padding-top: 30px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 60px;
+  margin-bottom: 100px;
+}
+
+.pricing .section-title {
+  margin-bottom: 1rem; 
+}
+
+.pricing .section-subtitle {
+  margin-bottom: 1.5rem;
+}
+
+.subscription-plans-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  z-index: 2;
+}
+
+.subscription-plans-container .service-column {
+  flex-basis: 45%;
+  width: 100%;
+  text-align: start;
+}
+
+.subscription-plans-container .service-column .h5 {
+  font-weight: 400;
+  font-family: "brandon-grotesque";
+  font-size: 1.125rem;
+}
+
+.price-and-title {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 15px;
+  text-align: start;
+}
+
+.price-and-title h3,
+ .price-and-title p {
+  font-family: "neulis-neue";
+}
+
+.pricing ul li:before {
+  /* content is checkmark.png */
+  display: inline-block;
+  content: "";
+  background: url("img/icon/checkmark.png") no-repeat center/contain;
+  width: 16px;
+  height: 16px;
+  margin-right: 10px;
+}
+
+.pricing ul {
+  margin-bottom: 40px;
+}
+
+.pricing .cta-button,
+.pricing button {
+  width: 100%;
+}
+
+.pricing .wave-container-bottom {
+  position: absolute;
+  z-index: 1;
+  bottom: -80px;
+}
+@media (min-width: 700px) {
+  .subscription-plans-container {
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+    gap: 30px;
+    width: 100%;
+  }
+  .pricing .wave-container-bottom {
+    bottom: -115px;
+  }
+}
+
+/* End Pricing */
+
+/* AI Automation Services */
+.ai-services {
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  /* This makes the pricing card center vertically. Adjust height as needed. */
-  background-color: #f7f7f7;
-  /* Soft background for the entire section */
-}
-
-.card {
-  background: white;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 350px;
-  padding: 20px;
   text-align: center;
+  gap: 15px;
+  flex-shrink: 0;
+  margin-top: -110px;
+  padding-top: 100px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 45px;
+  color:#fff;
 }
 
-.card h3 {
-  color: #333;
-  margin-bottom: 15px;
+.ai-services-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    z-index: -1;
+    background: url("img/noise-effect.png"), lightgray 0% 0% / 100px 100px repeat;
+    background-color: rgba(105, 144, 250, 0.9);
 }
 
-.card h2 {
-  font-size: 48px;
-  margin-bottom: 25px;
+.ai-services .badge {
+  z-index: 2;
 }
 
-.card h2 span {
-  font-size: 24px;
-  color: #666;
+.ai-services h2,
+.ai-services h5 {
+  margin-bottom: 0;
+  color: #fff;
+  max-width: 540px;
 }
-
-.card ul {
-  list-style: none;
-  padding: 0;
-  margin-bottom: 25px;
-}
-
-.card ul li {
-  padding: 10px 0;
-  border-bottom: 1px solid #eee;
-}
-
-.card ul li:last-child {
-  border-bottom: none;
-}
-
-.btn-signup {
-  background-color: #22a6b3;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 20px;
-  cursor: pointer;
-  font-size: 18px;
-  transition: background-color 0.3s;
-}
-
-.btn-signup:hover {
-  background-color: #0d8090;
-}
+/* End AI Automation Services */
 
 /* Testimonials */
 .testimonials {
@@ -903,43 +1055,6 @@ section h2 {
   }
 }
 
-.book-now {
-  /* background-color: #22a6b3; */
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 20px;
-  cursor: pointer;
-  font-size: 18px;
-  display: flex;
-  justify-content: center;
-}
-
-.book-now a {
-  color: white;
-  text-decoration: none;
-}
-
-.book-now a:hover {
-  background-color: #0d8090;
-}
-
-.book-now button {
-  background-color: #22a6b3;
-  color: white;
-  border: none;
-  margin: 10px auto;
-  padding: 10px 20px;
-  border-radius: 20px;
-  cursor: pointer;
-  font-size: 18px;
-  transition: background-color 0.3s;
-}
-
-h2 {
-  margin-bottom: 30px;
-}
-
 blockquote {
   quotes: "“" "”" "‘" "’";
 }
@@ -951,18 +1066,23 @@ blockquote:before {
 blockquote:after {
   content: close-quote;
 }
+/* End Testimonials */
 
 /* FAQs */
-.faq {
-  max-width: 800px;
+.faqs {
   margin: 0 auto;
   padding: 50px;
-  background: #f9f9f9;
+  background: #f9f5eb;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.faq h1 {
+.faq-items {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faq h2 {
   text-align: center;
   color: #333;
   font-size: 2.5rem;
@@ -970,30 +1090,20 @@ blockquote:after {
 }
 
 .faq-item {
-  background: #fff;
   margin-bottom: 15px;
   border-radius: 5px;
   overflow: hidden;
-  transition: max-height 0.3s ease;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .faq-question {
-  padding: 20px;
-  margin: 0;
-  background: #007bff;
-  color: white;
-  text-align: left;
-  border: none;
-  width: 100%;
-  text-transform: uppercase;
-  font-weight: bold;
   cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.faq-question:hover {
-  background-color: #0056b3;
+  padding: 20px;
+  color: #202223;
+  font-family: "brandon-grotesque";
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5rem;
 }
 
 .faq-answer {
@@ -1002,11 +1112,16 @@ blockquote:after {
   /* Hide answers by default */
   border-top: 1px solid #eee;
   background: #f0f0f0;
+  transition: max-height 0.3s ease;
 }
 
 .faq-answer p {
-  margin: 0;
-  color: #333;
+  color: #202223;
+  font-family: "brandon-grotesque";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 420;
+  line-height: 28px; /* 155.556% */
 }
 
 /* JavaScript will toggle this class */
@@ -1016,12 +1131,19 @@ blockquote:after {
 
 /* Footer */
 .site-footer {
-  background-color: #333;
+  background-color: #202223;
   color: #fff;
   text-align: center;
   padding: 40px 20px;
 }
 
+.site-footer p {
+  color: #fff;
+}
+
+.copyright {
+  opacity: 0.4;
+}
 .footer-content {
   max-width: 800px;
   margin: 0 auto;
@@ -1079,3 +1201,4 @@ blockquote:after {
     margin: 10px 0;
   }
 }
+/* End Footer */
