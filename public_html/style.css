@@ -996,6 +996,16 @@ section h2 {
   color: #fff;
   max-width: 540px;
 }
+
+.ai-services h5 {
+  font-size: 1rem;
+}
+
+.link-and-arrow {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
 /* End AI Automation Services */
 
 /* Testimonials */
