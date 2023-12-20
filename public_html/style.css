@@ -779,11 +779,19 @@ section h2 {
 .works-container {
   position: relative;
   display: flex;
+  flex-direction: column;
   max-width: 1110px;
   margin: 0 auto;
   padding-bottom: 70px;
   gap: 30px;
   z-index: 3;
+}
+
+.work-cards-a,
+.work-cards-b {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 }
 
 .work-card {
@@ -798,6 +806,9 @@ section h2 {
 }
 
 @media (min-width:700px) {
+  .works-container {
+    flex-direction: row;
+  }
   .work-cards-a {
     width: 50%;
     display: flex;
