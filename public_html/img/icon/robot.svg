@@ -1,17 +1,17 @@
 <svg width="52" height="48" viewBox="0 0 52 48" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g id="Group">
-<path id="Vector" d="M24 6.39274V3.88184C24 2.50114 25.1193 1.38184 26.5 1.38184C27.8807 1.38184 29 2.50114 29 3.88184V6.38184" stroke="black" stroke-width="2" stroke-miterlimit="2" stroke-linecap="round" stroke-linejoin="round"/>
-<path id="Vector_2" d="M37.4505 46.3818H14.5495C9.8473 46.3818 6 42.5345 6 37.8323V14.9313C6 10.2291 9.8473 6.38184 14.5495 6.38184H37.4505C42.1527 6.38184 46 10.2291 46 14.9313V37.8323C46 42.5345 42.1527 46.3818 37.4505 46.3818Z" stroke="black" stroke-width="2" stroke-miterlimit="2" stroke-linecap="round" stroke-linejoin="round"/>
-<path id="Vector_3" d="M34.8346 22.2179C36.3997 22.2179 37.6684 20.9492 37.6684 19.3841C37.6684 17.819 36.3997 16.5503 34.8346 16.5503C33.2695 16.5503 32.0008 17.819 32.0008 19.3841C32.0008 20.9492 33.2695 22.2179 34.8346 22.2179Z" stroke="black" stroke-width="2" stroke-miterlimit="2" stroke-linecap="round" stroke-linejoin="round"/>
-<path id="Vector_4" d="M17.3342 22.2174C18.8993 22.2174 20.168 20.9487 20.168 19.3836C20.168 17.8185 18.8993 16.5498 17.3342 16.5498C15.7691 16.5498 14.5004 17.8185 14.5004 19.3836C14.5004 20.9487 15.7691 22.2174 17.3342 22.2174Z" stroke="black" stroke-width="2" stroke-miterlimit="2" stroke-linecap="round" stroke-linejoin="round"/>
-<path id="Vector_5" d="M34.5 37.8818H17.5C15.3 37.8818 13.5 36.0818 13.5 33.8818C13.5 31.6818 15.3 29.8818 17.5 29.8818H34.5C36.7 29.8818 38.5 31.6818 38.5 33.8818C38.5 36.0818 36.7 37.8818 34.5 37.8818Z" stroke="black" stroke-width="2" stroke-miterlimit="2"/>
+<path id="Vector" d="M24 6.39274V3.88184C24 2.50114 25.1193 1.38184 26.5 1.38184C27.8807 1.38184 29 2.50114 29 3.88184V6.38184" stroke="white" stroke-width="2" stroke-miterlimit="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_2" d="M37.4505 46.3818H14.5495C9.8473 46.3818 6 42.5345 6 37.8323V14.9313C6 10.2291 9.8473 6.38184 14.5495 6.38184H37.4505C42.1527 6.38184 46 10.2291 46 14.9313V37.8323C46 42.5345 42.1527 46.3818 37.4505 46.3818Z" stroke="white" stroke-width="2" stroke-miterlimit="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_3" d="M34.8346 22.2179C36.3997 22.2179 37.6684 20.9492 37.6684 19.3841C37.6684 17.819 36.3997 16.5503 34.8346 16.5503C33.2695 16.5503 32.0008 17.819 32.0008 19.3841C32.0008 20.9492 33.2695 22.2179 34.8346 22.2179Z" stroke="white" stroke-width="2" stroke-miterlimit="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_4" d="M17.3342 22.2174C18.8993 22.2174 20.168 20.9487 20.168 19.3836C20.168 17.8185 18.8993 16.5498 17.3342 16.5498C15.7691 16.5498 14.5004 17.8185 14.5004 19.3836C14.5004 20.9487 15.7691 22.2174 17.3342 22.2174Z" stroke="white" stroke-width="2" stroke-miterlimit="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_5" d="M34.5 37.8818H17.5C15.3 37.8818 13.5 36.0818 13.5 33.8818C13.5 31.6818 15.3 29.8818 17.5 29.8818H34.5C36.7 29.8818 38.5 31.6818 38.5 33.8818C38.5 36.0818 36.7 37.8818 34.5 37.8818Z" stroke="white" stroke-width="2" stroke-miterlimit="2"/>
 <g id="Group_2">
-<path id="Vector_6" d="M3.5 31.3818C2.1193 31.3818 1 30.2625 1 28.8818V20.8818C1 19.5011 2.1193 18.3818 3.5 18.3818C4.8807 18.3818 6 19.5011 6 20.8818V28.8818C6 30.2625 4.8807 31.3818 3.5 31.3818Z" stroke="black" stroke-width="2" stroke-miterlimit="2" stroke-linecap="round" stroke-linejoin="round"/>
-<path id="Vector_7" d="M48.5 31.3818C49.8807 31.3818 51 30.2625 51 28.8818V20.8818C51 19.5011 49.8807 18.3818 48.5 18.3818C47.1193 18.3818 46 19.5011 46 20.8818V28.8818C46 30.2625 47.1193 31.3818 48.5 31.3818Z" stroke="black" stroke-width="2" stroke-miterlimit="2" stroke-linecap="round" stroke-linejoin="round"/>
-<path id="Vector_8" d="M18 30.3818V37.3818" stroke="black" stroke-width="2" stroke-miterlimit="2" stroke-linecap="round" stroke-linejoin="round"/>
-<path id="Vector_9" d="M23 30.3818V37.3818" stroke="black" stroke-width="2" stroke-miterlimit="2" stroke-linecap="round" stroke-linejoin="round"/>
-<path id="Vector_10" d="M28 30.3818V37.3818" stroke="black" stroke-width="2" stroke-miterlimit="2" stroke-linecap="round" stroke-linejoin="round"/>
-<path id="Vector_11" d="M33 30.3818V37.3818" stroke="black" stroke-width="2" stroke-miterlimit="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_6" d="M3.5 31.3818C2.1193 31.3818 1 30.2625 1 28.8818V20.8818C1 19.5011 2.1193 18.3818 3.5 18.3818C4.8807 18.3818 6 19.5011 6 20.8818V28.8818C6 30.2625 4.8807 31.3818 3.5 31.3818Z" stroke="white" stroke-width="2" stroke-miterlimit="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_7" d="M48.5 31.3818C49.8807 31.3818 51 30.2625 51 28.8818V20.8818C51 19.5011 49.8807 18.3818 48.5 18.3818C47.1193 18.3818 46 19.5011 46 20.8818V28.8818C46 30.2625 47.1193 31.3818 48.5 31.3818Z" stroke="white" stroke-width="2" stroke-miterlimit="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_8" d="M18 30.3818V37.3818" stroke="white" stroke-width="2" stroke-miterlimit="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_9" d="M23 30.3818V37.3818" stroke="white" stroke-width="2" stroke-miterlimit="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_10" d="M28 30.3818V37.3818" stroke="white" stroke-width="2" stroke-miterlimit="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_11" d="M33 30.3818V37.3818" stroke="white" stroke-width="2" stroke-miterlimit="2" stroke-linecap="round" stroke-linejoin="round"/>
 </g>
 </g>
 </svg>
