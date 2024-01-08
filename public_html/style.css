@@ -608,6 +608,7 @@ section h2 {
     -webkit-backdrop-filter: unset;
     box-shadow: unset;
     border-radius: unset;
+    background-color: unset;
   }
 }
 
