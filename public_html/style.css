@@ -424,12 +424,10 @@ section h2 {
 /* Start Hero Section */
 .hero {
   position: relative;
-  height: auto;
+  height: 100%;
   min-height: 100vh;
   background-image: unset;
   background-color: rgb(251, 239, 147);
-  flex-direction: row;
-  /* height: 110vh; */
   padding-top: 55px;
   padding-bottom: 30px;
   display: flex;
@@ -502,6 +500,7 @@ section h2 {
 @media (min-width: 768px) {
   .hero {
     flex-direction: row;
+    height: auto;
   }
   .hero .hero-text {
     width: 50%;
@@ -582,12 +581,6 @@ section h2 {
     justify-content: center;
     align-items: center;
     gap: 10px;
-  }
-}
-
-@media (max-width: 768px) {
-  .hero {
-    height: 100%;
   }
 }
 
