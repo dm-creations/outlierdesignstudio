@@ -1,0 +1,1073 @@
+// Variables for colors, fonts, and breakpoints
+$color-primary: #202223;
+$color-secondary: #f9f5eb;
+$font-primary: "neulis-neue", sans-serif;
+$font-secondary: "brandon-grotesque", sans-serif;
+$breakpoint-lowmedium: 700px;
+$breakpoint-medium: 768px; // Example breakpoint
+$breakpoint-large: 1441px;
+
+// Mixin for media queries
+@mixin respond-to($breakpoint) {
+    @if $breakpoint ==lowmedium {
+        @media (min-width: $breakpoint-lowmedium) {
+            @content;
+        }
+    }
+
+    @if $breakpoint ==medium {
+        @media (min-width: $breakpoint-medium) {
+            @content;
+        }
+    }
+
+    @if $breakpoint ==large {
+        @media (min-width: $breakpoint-large) {
+            @content;
+        }
+    }
+
+    // Add other breakpoints as needed
+}
+
+// Mixin for box sizing
+@mixin box-sizing($box-model) {
+    -webkit-box-sizing: $box-model;
+    -moz-box-sizing: $box-model;
+    box-sizing: $box-model;
+}
+
+// Box sizing rules
+*,
+*::before,
+*::after {
+    @include box-sizing(border-box)
+}
+
+// Base styles
+html {
+    font-size: 14px; // Consider using variables for font sizes if they're repeated
+
+    @include respond-to(medium) {
+        font-size: 16px;
+    }
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+    margin: 0;
+    color: $color-primary;
+}
+
+// Typography
+h1,
+h2,
+h3,
+h4 {
+    font-family: $font-primary;
+}
+
+h5,
+p,
+li {
+    font-family: $font-secondary;
+    margin: 0;
+}
+
+strong {
+    font-weight: 700;
+}
+
+h3 {
+    font-size: 3rem;
+    line-height: 3.75rem;
+}
+
+h5,
+.h5 {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    margin: 0;
+}
+
+p {
+    font-size: 1rem;
+}
+
+// Lists
+ul,
+ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    li {
+        margin-left: 10px;
+
+        // Nested ol li styles for .grid-item can be added here
+    }
+}
+
+// Base body styles
+body {
+    min-height: 100vh;
+    scroll-behavior: smooth;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+}
+
+// Links and button resets
+a {
+    text-decoration: none;
+}
+
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+    background-color: transparent;
+    border: 0;
+    padding: 0;
+}
+
+// Inherit fonts for form elements
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+// Images
+img {
+    max-width: 100%;
+    display: block;
+}
+
+// Media query for reduced motion
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+// Section Rules
+section {
+    position: relative;
+
+    h2 {
+        text-align: center;
+        font-family: $font-primary;
+        font-size: 2.5rem;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 3.75rem;
+        letter-spacing: -1px;
+    }
+}
+
+/* **/
+/* Components */
+/* **/
+// Grid Container
+.grid-container {
+    position: relative;
+    max-width: 970px;
+    margin: 0 auto;
+    display: grid;
+    gap: 20px;
+    padding: 20px;
+    z-index: 1;
+
+    @include respond-to(lowmedium) {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+// Grid Item
+.grid-item {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    color: #f9f5eb; // Consider using a variable for this color if reused
+    padding: 15px;
+    text-align: start;
+
+    img {
+        width: 34px; // Adjust the size as needed
+    }
+
+    h4,
+    p {
+        margin: 0;
+        color: #f9f5eb; // Consider using a variable for this color if reused
+        font-size: 1rem;
+        font-style: normal;
+        font-weight: 600; // For h4
+        line-height: 1.5rem;
+        letter-spacing: 0.1px;
+    }
+
+    p {
+        font-weight: 400; // For p
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+    }
+
+    &:nth-child(1) ol {
+        counter-reset: start 0;
+    }
+
+    &:nth-child(1) ol li::before {
+        counter-increment: start;
+        content: counter(start) ". ";
+    }
+
+    &:nth-child(2) ol {
+        counter-reset: start 1;
+    }
+
+    &:nth-child(2) ol li::before {
+        counter-increment: start;
+        content: counter(start) ". ";
+    }
+
+    &:nth-child(3) ol {
+        counter-reset: start 2;
+    }
+
+    &:nth-child(3) ol li::before {
+        counter-increment: start;
+        content: counter(start) ". ";
+    }
+
+    &:nth-child(4) ol {
+        counter-reset: start 3;
+    }
+
+    &:nth-child(4) ol li::before {
+        counter-increment: start;
+        content: counter(start) ". ";
+    }
+}
+
+// Focus Card
+.focus-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 25px 25px;
+    border-radius: 29px;
+    border: 2px solid $color-primary;
+    background: rgba(165, 159, 141, 0.01); // Consider variable for rgba values
+    box-shadow: 0px 4px 0px 0px $color-primary;
+    z-index: 1;
+
+    &-header {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    h3 {
+        color: $color-primary;
+        font-family: $font-primary;
+        font-size: 3rem;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 3.75rem;
+        letter-spacing: -1px;
+    }
+
+    img {
+        max-width: 90px;
+        align-self: center;
+    }
+
+    &-button-and-text {
+        h5 {
+            margin-bottom: 10px;
+        }
+    }
+
+    @include respond-to(lowmedium) {
+        padding: 45px 55px;
+
+        &-header {
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 20px;
+            width: 100%;
+        }
+
+        img {
+            align-self: start;
+        }
+
+        p {
+            text-align: start;
+        }
+
+        &-button-and-text {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: space-between;
+            align-items: start;
+            gap: 10px;
+
+            .cta-button {
+                flex: 0 0 auto;
+            }
+
+            h5 {
+                flex: 1 1 auto; // Allow the text to take up the remaining space
+                text-align: start; // Align the text to the right
+            }
+        }
+    }
+}
+
+// CTA Button
+.cta-button {
+    button {
+        background-color: #A674FA; // Consider using a variable for colors
+        color: #fff;
+        font-family: $font-secondary;
+        border: none;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        padding: 10px 30px;
+        font-size: 1rem;
+        font-style: normal;
+        font-weight: 400;
+        letter-spacing: 0.1px;
+        line-height: 1.5rem;
+        cursor: pointer;
+        transition: all 0.25s ease-in-out;
+
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+}
+
+// Service Column
+.service-column {
+    position: relative;
+    background: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 40px 45px 60px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 410px;
+
+    img {
+        width: 56px;
+        height: 56px;
+        margin-left: auto;
+    }
+
+    h4 {
+        text-align: start;
+        margin-bottom: 10px;
+        line-height: 1.5rem;
+    }
+
+    li {
+        padding: 10px 0;
+        font-size: 1rem;
+        line-height: 1.5rem;
+        text-align: start;
+    }
+
+    @include respond-to(lowmedium) {
+        flex-grow: 1;
+        max-width: 410px;
+        min-width: 310px;
+    }
+}
+
+// Offer Badge
+.offer-badge {
+    position: absolute;
+    width: 133px;
+    height: 80px;
+    left: -40px;
+    top: -4px;
+    transform: rotate(-26.371deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0;
+    border-radius: 10px;
+    background-color: #000;
+
+    p {
+        color: #FFF;
+        text-align: center;
+        font-family: $font-primary;
+        font-size: 1.5rem;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 24px; // 100%
+        letter-spacing: 0.1px;
+    }
+
+    @include respond-to(lowmedium) {
+        width: 233px;
+        left: -80px;
+        top: -10px;
+
+        p {
+            // Styles for p can be adjusted here if necessary for medium screens
+        }
+    }
+}
+
+// Normal Badge
+.badge {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 172.5px;
+    height: 47.382px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    background: #202223;
+
+    p {
+        color: #FFF;
+        text-align: center;
+        font-family: "neulis-neue";
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 800;
+        line-height: 1.5rem;
+        letter-spacing: 0.1px;
+    }
+}
+
+/* **/
+/* End Components */
+/* **/
+
+// Hero Section
+.hero {
+    position: relative;
+    height: 100%;
+    min-height: 100vh;
+    background-image: unset;
+    background-color: rgb(251, 239, 147); // Consider using a variable for colors
+    padding-top: 55px;
+    padding-bottom: 30px;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    z-index: 2;
+
+    &-text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        z-index: 3;
+    }
+
+    .animated-monitor {
+        display: flex;
+        z-index: 2;
+    }
+
+    .monitor {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .animated-monitor img,
+    .slides img {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        z-index: 3;
+    }
+
+    .slides {
+        position: absolute;
+        top: 5px;
+        left: 5px;
+        height: 65%;
+        width: calc(100% - 10px);
+        overflow: hidden;
+    }
+
+    // Specific child img styles
+    .animated-monitor img:nth-child(1) {
+        z-index: 9; // Adjust z-index as needed
+    }
+
+    img:nth-child(1) {
+        top: 0;
+        left: 12px;
+        z-index: 1;
+        width: calc(100% - 15px);
+        /* width: 100%; */
+        height: auto;
+    }
+
+    img:nth-child(2) {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        height: auto;
+    }
+
+    @include respond-to(medium) {
+        flex-direction: row;
+        height: auto;
+
+        .hero-text {
+            width: 50%;
+            text-align: start;
+            justify-content: center;
+            align-items: start;
+            gap: 20px;
+
+            h2 {
+                max-width: 617px; // Specific max widths for responsiveness
+            }
+
+            h3 {
+                max-width: 445px;
+            }
+        }
+    }
+
+    @include respond-to(large) {
+
+        // Assuming 'large' is another breakpoint defined in mixins
+        .animated-monitor {
+            max-width: 400px;
+        }
+
+        .hero-text {
+            max-width: 600px;
+        }
+    }
+
+    h2,
+    h3,
+    button,
+    h5 {
+        position: relative;
+        z-index: 3;
+    }
+
+    h2,
+    h3 {
+        color: $color-primary;
+        text-align: center;
+        padding: 0 10px;
+    }
+
+    h2 {
+        font-family: $font-primary;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 3.5rem;
+    }
+
+    h3 {
+        font-family: $font-secondary;
+        font-weight: 400;
+        font-size: 1.25rem;
+        line-height: 1.75rem;
+    }
+
+    h5 {
+        font-family: $font-secondary;
+        text-align: start;
+        padding: 0 10px;
+    }
+
+    .button-and-text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    }
+
+    @include respond-to(medium) {
+
+        h2,
+        h3 {
+            text-align: start;
+        }
+
+        .button-and-text {
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+    }
+}
+
+// Logo
+.logo {
+    float: left;
+    padding: 5px 0;
+    margin-left: 0;
+    background: rgba(255, 255, 255, 0.4); // Translucent white background
+    backdrop-filter: blur(5px); // This will give the feather effect to the background
+    -webkit-backdrop-filter: blur(10px); //For Safari compatibility
+    transition: all 0.5s ease;
+    box-shadow: 0 0 15px 15px rgba(255, 255, 255, 0.4);
+    border-radius: 0 8px 8px 8px;
+
+    img {
+        display: block;
+    }
+
+    @include respond-to(medium) {
+        backdrop-filter: unset;
+        -webkit-backdrop-filter: unset;
+        box-shadow: unset;
+        border-radius: unset;
+        background-color: unset;
+    }
+
+    @include respond-to(large) {
+        position: absolute;
+        z-index: 9;
+    }
+}
+
+// Navigation (Nav) Section
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0);
+    z-index: 1000;
+    height: 55px;
+
+    &-links {
+        display: flex;
+        justify-content: center;
+        padding: 10px 0;
+
+        ul {
+            li {
+                opacity: 0;
+            }
+        }
+    }
+
+    ul {
+        margin-right: calc(140px / 2);
+    }
+
+    a {
+        color: $color-primary;
+        text-align: center;
+        font-family: $font-secondary;
+        font-size: 1rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 1.5rem;
+        letter-spacing: 0.1px;
+    }
+
+    @include respond-to(medium) {
+        background-color: rgba(255, 255, 255, 0);
+
+        &-links {
+            justify-content: center;
+            align-items: center;
+            height: 55px;
+
+            ul {
+                margin-right: 0;
+                display: inline-flex;
+                gap: 25px;
+
+                li {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
+
+// Benefits Section
+.benefits {
+    text-align: center;
+    background: #f7f7f7; // Consider using a variable for repeated color values
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+
+    h2 {
+        max-width: 590px;
+        margin: 0 auto 25px;
+        color: $color-primary;
+        text-align: center;
+        font-family: $font-primary;
+        font-size: 2.5rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 3rem;
+        letter-spacing: -0.5px;
+    }
+
+    h4 {
+        text-align: center;
+        font-family: $font-primary;
+        font-size: 1rem;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 1.5rem;
+        letter-spacing: 0.1px;
+    }
+
+    h5 {
+        max-width: 540px;
+        margin: 0 auto;
+        text-align: center;
+        font-family: $font-secondary;
+        font-size: 1rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 1.25rem;
+        letter-spacing: 0.1px;
+    }
+
+    .feature-lists {
+        position: relative;
+        padding-top: 60px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+
+        .wave-container-top {
+            position: absolute;
+            z-index: 1;
+            top: 15px;
+
+            >svg {
+                width: 100vw;
+                height: 100%;
+            }
+        }
+    }
+
+    .feature-grid {
+        width: 100vw;
+        background-color: #6990FA; // Consider using a variable for this color
+
+        h4 {
+            text-align: start;
+        }
+    }
+
+    @include respond-to(medium) {
+        .feature-lists .wave-container-top {
+            top: 5px;
+        }
+    }
+}
+
+// Our Work
+.our-work {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+
+    .our-work-container {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+        background: url("img/noise-effect.png"), lightgray 0% 0% / 100px 100px repeat;
+        background-color: rgba(105, 144, 250, 0.9);
+    }
+
+    h2 {
+        position: relative;
+        color: #FFF;
+        margin-top: 20px;
+        margin-bottom: 30px;
+        z-index: 3;
+    }
+
+    .works-container {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        max-width: 1110px;
+        margin: 0 auto;
+        padding-bottom: 70px;
+        gap: 30px;
+        z-index: 3;
+    }
+
+    .work-cards-a,
+    .work-cards-b {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .work-card {
+        display: flex;
+        align-items: start;
+    }
+
+    .work-card-image img {
+        width: 100%;
+        height: auto;
+        object-fit: fill;
+    }
+
+    @include respond-to(lowmedium) {
+        .works-container {
+            flex-direction: row;
+        }
+
+        .work-cards-a {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .work-card:nth-child(1) {
+            width: 100%;
+            max-height: 540px;
+            overflow: hidden;
+        }
+
+        .work-card:nth-child(2) {
+            display: flex;
+            width: 100%;
+            max-height: 300px;
+            justify-content: center;
+            align-items: start;
+            overflow: hidden;
+        }
+
+        .work-cards-b {
+            width: 50%;
+            display: flex;
+            flex-direction: column-reverse;
+            align-items: center;
+            gap: 30px;
+        }
+    }
+}
+
+// How it Works
+.how-it-works {
+    background-color: #F9F5EB;
+    padding-top: 20px;
+    margin: auto;
+    text-align: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 30px;
+
+    .workflow-steps-and-book-call-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+
+    .workflow-steps h4 {
+        color: #202223;
+    }
+
+    h3,
+    p {
+        color: #202223;
+    }
+
+    @include respond-to(lowmedium) {
+        .workflow-steps-and-book-call-container {
+            flex-direction: row;
+            align-items: center;
+            gap: 16px;
+            width: 100%;
+            max-width: 1110px;
+            margin: auto;
+        }
+
+        .workflow-steps {
+            width: 50%;
+            max-width: 520px;
+        }
+
+        .workflow-steps .grid-container {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .book-call {
+            max-width: 570px;
+            width: 50%;
+        }
+    }
+}
+
+// Task Types (Design and Development)
+.task-types-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    .service-column {
+        flex-basis: 45%;
+        width: 100%;
+    }
+
+    @include respond-to(lowmedium) {
+        @media (min-width: 700px) {
+            flex-direction: row;
+            justify-content: center;
+            align-items: stretch;
+            gap: 30px;
+            width: 100%;
+        }
+    }
+}
+
+// Pricing */
+.pricing {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: #fbee91;
+    padding-top: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 60px;
+    margin-bottom: 100px;
+
+    .section-title {
+        margin-bottom: 1rem;
+    }
+
+    .section-subtitle {
+        margin-bottom: 1.5rem;
+    }
+
+    .subscription-plans-container {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        z-index: 2;
+    }
+
+    .subscription-plans-container .service-column {
+        flex-basis: 45%;
+        width: 100%;
+        text-align: start;
+    }
+
+    .subscription-plans-container .service-column .h5 {
+        font-weight: 400;
+        font-family: "brandon-grotesque";
+        font-size: 1.125rem;
+    }
+
+    .price-and-title {
+        margin-top: 30px;
+        margin-bottom: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        gap: 15px;
+        text-align: start;
+    }
+
+    .price-and-title h3,
+    .price-and-title p {
+        font-family: "neulis-neue";
+    }
+
+    ul li:before {
+        /* content is checkmark.png */
+        display: inline-block;
+        content: "";
+        background: url("img/icon/checkmark.png") no-repeat center/contain;
+        width: 16px;
+        height: 16px;
+        margin-right: 10px;
+    }
+
+    ul {
+        margin-bottom: 40px;
+    }
+
+    .cta-button,
+    button {
+        width: 100%;
+    }
+
+    .wave-container-bottom {
+        position: absolute;
+        z-index: 1;
+        bottom: -80px;
+    }
+
+    .wave-container-bottom>svg {
+        width: 100vw;
+        height: 100%;
+    }
+
+    @media (min-width: 700px) {
+        .subscription-plans-container {
+            flex-direction: row;
+            justify-content: center;
+            align-items: stretch;
+            gap: 30px;
+            width: 100%;
+        }
+
+        .wave-container-bottom {
+            bottom: -125px;
+        }
+    }
+}
