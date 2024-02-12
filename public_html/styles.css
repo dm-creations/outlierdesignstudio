@@ -39,9 +39,11 @@ h4 {
 
 h5,
 p,
-li {
+li,
+blockquote {
   font-family: "brandon-grotesque", sans-serif;
   margin: 0;
+  font-weight: 700;
 }
 
 strong {
@@ -58,6 +60,10 @@ h5,
   font-size: 0.875rem;
   line-height: 1.25rem;
   margin: 0;
+}
+
+blockquote {
+  font-size: 2.5em;
 }
 
 p {
@@ -93,6 +99,7 @@ input[type=submit] {
   background-color: transparent;
   border: 0;
   padding: 0;
+  cursor: pointer;
 }
 
 input,
@@ -686,9 +693,195 @@ section h2 {
   }
 }
 
+.empower {
+  background-color: #E8B727;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+.empower .img-and-text {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 20px;
+  column-gap: 100px;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+}
+@media (min-width: 768px) {
+  .empower .img-and-text {
+    max-width: 970px;
+    flex-direction: row;
+  }
+}
+.empower .promo-img {
+  width: 100%;
+  height: 500px;
+}
+@media (min-width: 700px) {
+  .empower .promo-img {
+    width: 50%;
+    flex-direction: row;
+  }
+}
+@media (min-width: 700px) {
+  .empower .promo-text {
+    width: 50%;
+  }
+}
+
+.how-it-works {
+  background-color: #46695F;
+  margin: auto;
+  text-align: center;
+  padding-top: 40px;
+  padding-bottom: 100px;
+}
+.how-it-works h2 {
+  position: relative;
+  z-index: 2;
+  color: white;
+}
+.how-it-works .wave-container-top {
+  position: absolute;
+  display: none;
+  z-index: 1;
+  top: 0;
+  height: 100%;
+}
+.how-it-works .wave-container-top > svg {
+  width: 100vw;
+  height: auto;
+}
+.how-it-works .workflow-steps-and-book-call-container {
+  background-color: #46695F;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 970px;
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 30px;
+  gap: 16px;
+}
+@media (min-width: 700px) {
+  .how-it-works .workflow-steps-and-book-call-container {
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+    max-width: 1110px;
+    margin: auto;
+  }
+  .how-it-works .workflow-steps {
+    width: 100%;
+    max-width: 970px;
+  }
+  .how-it-works .workflow-steps .grid-container {
+    gap: 20px;
+  }
+  .how-it-works .workflow-steps .grid-item {
+    padding: 10px;
+  }
+  .how-it-works .book-call {
+    max-width: 570px;
+    width: 50%;
+  }
+}
+
+.quote {
+  background-color: #FFFAFA;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
+@media (min-width: 768px) {
+  .quote {
+    padding: 190px;
+  }
+}
+@media (min-width: 768px) {
+  .quote .quote-container {
+    max-width: 540px;
+  }
+}
+@media (min-width: 768px) {
+  .quote blockquote {
+    text-align: center;
+  }
+}
+
+.testimonials {
+  text-align: center;
+  padding: 20px;
+  background: #FFFAFA;
+}
+.testimonials .testimonial-container {
+  position: relative;
+  height: 200px;
+  /* Adjust height based on content */
+}
+.testimonials .testimonial {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  opacity: 0;
+  /* Testimonials start out invisible */
+  animation: fadeInOut 9s infinite;
+  /* Adjust timing as needed */
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background: white;
+  border-radius: 4px;
+  width: auto;
+}
+.testimonials #testimonial1 {
+  animation-delay: 0s;
+  /* First testimonial starts immediately */
+}
+.testimonials #testimonial2 {
+  animation-delay: 3s;
+  /* Second testimonial starts after 3s */
+}
+.testimonials #testimonial3 {
+  animation-delay: 6s;
+  /* Third testimonial starts after 6s */
+}
+.testimonials .img-name-and-desc {
+  display: flex;
+  justify-content: start;
+}
+.testimonials .name-and-desc {
+  text-align: start;
+  margin-left: 10px;
+}
+@keyframes fadeInOut {
+  0%, 100% {
+    opacity: 0;
+  }
+  16.66%, 50% {
+    opacity: 1;
+  }
+}
+.testimonials blockquote {
+  quotes: "“" "”" "‘" "’";
+  text-align: start;
+}
+.testimonials blockquote:before {
+  content: open-quote;
+}
+.testimonials blockquote:after {
+  content: close-quote;
+}
+
 .benefits {
   text-align: center;
-  background: #f7f7f7;
+  background: #E8B727;
   padding-top: 50px;
   display: flex;
   flex-direction: column;
@@ -711,6 +904,7 @@ section h2 {
 .benefits h4 {
   text-align: center;
   font-family: "neulis-neue", sans-serif;
+  color: #202223;
   font-size: 1rem;
   font-style: normal;
   font-weight: 500;
@@ -722,11 +916,15 @@ section h2 {
   margin: 0 auto;
   text-align: center;
   font-family: "brandon-grotesque", sans-serif;
+  color: #202223;
   font-size: 1rem;
   font-style: normal;
   font-weight: 400;
   line-height: 1.25rem;
   letter-spacing: 0.1px;
+}
+.benefits p {
+  color: #202223;
 }
 .benefits .feature-lists {
   position: relative;
@@ -748,7 +946,6 @@ section h2 {
 }
 .benefits .feature-grid {
   width: 100vw;
-  background-color: #6990FA;
 }
 .benefits .feature-grid h4 {
   text-align: start;
@@ -756,53 +953,6 @@ section h2 {
 @media (min-width: 768px) {
   .benefits .feature-lists .wave-container-top {
     top: 5px;
-  }
-}
-
-.how-it-works {
-  background-color: #F9F5EB;
-  padding-top: 20px;
-  margin: auto;
-  text-align: center;
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-bottom: 30px;
-}
-.how-it-works .workflow-steps-and-book-call-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 16px;
-}
-.how-it-works .workflow-steps h4 {
-  color: #202223;
-}
-.how-it-works h3,
-.how-it-works p {
-  color: #202223;
-}
-@media (min-width: 700px) {
-  .how-it-works .workflow-steps-and-book-call-container {
-    flex-direction: row;
-    align-items: center;
-    gap: 16px;
-    width: 100%;
-    max-width: 1110px;
-    margin: auto;
-  }
-  .how-it-works .workflow-steps {
-    width: 50%;
-    max-width: 520px;
-  }
-  .how-it-works .workflow-steps .grid-container {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-  }
-  .how-it-works .book-call {
-    max-width: 570px;
-    width: 50%;
   }
 }
 
@@ -951,61 +1101,6 @@ section h2 {
   display: flex;
   gap: 10px;
   align-items: center;
-}
-
-.testimonials {
-  text-align: center;
-  padding: 20px;
-  background: #f9f9f9;
-}
-.testimonials .testimonial-container {
-  position: relative;
-  height: 200px;
-  /* Adjust height based on content */
-}
-.testimonials .testimonial {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
-  opacity: 0;
-  /* Testimonials start out invisible */
-  animation: fadeInOut 9s infinite;
-  /* Adjust timing as needed */
-  padding: 20px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  background: white;
-  border-radius: 4px;
-}
-.testimonials #testimonial1 {
-  animation-delay: 0s;
-  /* First testimonial starts immediately */
-}
-.testimonials #testimonial2 {
-  animation-delay: 3s;
-  /* Second testimonial starts after 3s */
-}
-.testimonials #testimonial3 {
-  animation-delay: 6s;
-  /* Third testimonial starts after 6s */
-}
-@keyframes fadeInOut {
-  0%, 100% {
-    opacity: 0;
-  }
-  16.66%, 50% {
-    opacity: 1;
-  }
-}
-.testimonials blockquote {
-  quotes: "“" "”" "‘" "’";
-}
-.testimonials blockquote:before {
-  content: open-quote;
-}
-.testimonials blockquote:after {
-  content: close-quote;
 }
 
 .faqs {

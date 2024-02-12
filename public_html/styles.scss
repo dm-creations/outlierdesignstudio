@@ -4,11 +4,14 @@ $color-secondary: #f9f5eb;
 $background-colour-primary: #E8B727;
 $background-colour-secondary: #46695F;
 $background-colour-accent: #8B4A93;
+$background-colour-1: #FFFAFA;
 $font-primary: "neulis-neue", sans-serif;
 $font-secondary: "brandon-grotesque", sans-serif;
 $breakpoint-lowmedium: 700px;
 $breakpoint-medium: 768px; // Example breakpoint
 $breakpoint-large: 1441px;
+$margin-left: 50px;
+$margin-right: 50px;
 
 // Mixin for media queries
 @mixin respond-to($breakpoint) {
@@ -80,9 +83,11 @@ h4 {
 
 h5,
 p,
-li {
+li,
+blockquote {
     font-family: $font-secondary;
     margin: 0;
+    font-weight: 700;
 }
 
 strong {
@@ -99,6 +104,10 @@ h5,
     font-size: 0.875rem;
     line-height: 1.25rem;
     margin: 0;
+}
+
+blockquote {
+    font-size: 2.5em;
 }
 
 p {
@@ -139,6 +148,7 @@ input[type="submit"] {
     background-color: transparent;
     border: 0;
     padding: 0;
+    cursor: pointer;
 }
 
 // Inherit fonts for form elements
@@ -366,6 +376,7 @@ section {
             transform: scale(1.1);
         }
     }
+
     &-outline {
         font-family: $font-secondary;
         border: solid 1px #A674FA;
@@ -826,10 +837,236 @@ section {
     }
 }
 
-// Benefits Section (Removed)
+// Empower
+.empower {
+    background-color: $background-colour-primary;
+    padding-left: $margin-left;
+    padding-right: $margin-right;
+
+    .img-and-text {
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 20px;
+        column-gap: 100px;
+        margin: 0 auto;
+        justify-content: center;
+        align-items: center;
+
+        @media (min-width: $breakpoint-medium) {
+            max-width: 970px;
+            flex-direction: row;
+        }
+    }
+
+    .promo-img {
+        width: 100%;
+        height: 500px;
+
+        @media (min-width: $breakpoint-lowmedium) {
+            width: 50%;
+            flex-direction: row;
+        }
+    }
+
+    .promo-text {
+        @media (min-width: $breakpoint-lowmedium) {
+            width: 50%;
+        }
+    }
+}
+
+// How it Works
+.how-it-works {
+    background-color: $background-colour-secondary;
+    margin: auto;
+    text-align: center;
+    padding-top: 40px;
+    padding-bottom: 100px;
+
+    h2 {
+        position: relative;
+        z-index: 2;
+        color: white;
+    }
+
+    .wave-container-top {
+        position: absolute;
+        display: none;
+        z-index: 1;
+        top: 0;
+        height: 100%;
+
+        >svg {
+            width: 100vw;
+            height: auto;
+        }
+    }
+
+    .workflow-steps-and-book-call-container {
+        background-color: $background-colour-secondary;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        max-width: 970px;
+        padding-top: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-bottom: 30px;
+        gap: 16px;
+    }
+
+    .workflow-steps h4 {
+        // color: #202223;
+    }
+
+    h3,
+    p {
+        // color: #202223;
+    }
+
+    @include respond-to(lowmedium) {
+        .workflow-steps-and-book-call-container {
+            flex-direction: row;
+            align-items: center;
+            gap: 16px;
+            width: 100%;
+            max-width: 1110px;
+            margin: auto;
+        }
+
+        .workflow-steps {
+            width: 100%;
+            max-width: 970px;
+        }
+
+        .workflow-steps .grid-container {
+            // grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .workflow-steps .grid-item {
+            padding: 10px;
+        }
+
+        .book-call {
+            max-width: 570px;
+            width: 50%;
+        }
+    }
+}
+
+// Quote
+.quote {
+    background-color: $background-colour-1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+
+    @media (min-width: $breakpoint-medium) {
+        padding: 190px;
+    }
+
+    .quote-container {
+        @media (min-width: $breakpoint-medium) {
+            max-width: 540px;
+        }
+    }
+    
+    blockquote {
+        @media (min-width: $breakpoint-medium) {
+            text-align: center;
+        }
+    }
+}
+
+// Testimonials
+.testimonials {
+    text-align: center;
+    padding: 20px;
+    background: $background-colour-1;
+
+    .testimonial-container {
+        position: relative;
+        height: 200px;
+        /* Adjust height based on content */
+    }
+
+    .testimonial {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        opacity: 0;
+        /* Testimonials start out invisible */
+        animation: fadeInOut 9s infinite;
+        /* Adjust timing as needed */
+        padding: 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        background: white;
+        border-radius: 4px;
+        width: auto;
+    }
+
+    #testimonial1 {
+        animation-delay: 0s;
+        /* First testimonial starts immediately */
+    }
+
+    #testimonial2 {
+        animation-delay: 3s;
+        /* Second testimonial starts after 3s */
+    }
+
+    #testimonial3 {
+        animation-delay: 6s;
+        /* Third testimonial starts after 6s */
+    }
+
+    .img-name-and-desc {
+        display: flex;
+        justify-content: start;
+    }
+
+    .name-and-desc {
+        text-align: start;
+        margin-left: 10px;
+    }
+
+    @keyframes fadeInOut {
+
+        0%,
+        100% {
+            opacity: 0;
+        }
+
+        16.66%,
+        50% {
+            opacity: 1;
+        }
+    }
+
+    blockquote {
+        quotes: "“" "”" "‘" "’";
+        text-align: start;
+    }
+
+    blockquote:before {
+        content: open-quote;
+    }
+
+    blockquote:after {
+        content: close-quote;
+    }
+}
+
+// Benefits Section
 .benefits {
     text-align: center;
-    background: #f7f7f7; // Consider using a variable for repeated color values
+    background: $background-colour-primary; // Consider using a variable for repeated color values
     padding-top: 50px;
     display: flex;
     flex-direction: column;
@@ -853,6 +1090,7 @@ section {
     h4 {
         text-align: center;
         font-family: $font-primary;
+        color: $color-primary;
         font-size: 1rem;
         font-style: normal;
         font-weight: 500;
@@ -865,11 +1103,16 @@ section {
         margin: 0 auto;
         text-align: center;
         font-family: $font-secondary;
+        color: $color-primary;
         font-size: 1rem;
         font-style: normal;
         font-weight: 400;
         line-height: 1.25rem;
         letter-spacing: 0.1px;
+    }
+
+    p {
+        color: $color-primary;
     }
 
     .feature-lists {
@@ -895,7 +1138,7 @@ section {
 
     .feature-grid {
         width: 100vw;
-        background-color: #6990FA; // Consider using a variable for this color
+        // background-color: #6990FA; // Consider using a variable for this color
 
         h4 {
             text-align: start;
@@ -905,61 +1148,6 @@ section {
     @include respond-to(medium) {
         .feature-lists .wave-container-top {
             top: 5px;
-        }
-    }
-}
-
-// How it Works
-.how-it-works {
-    background-color: #F9F5EB;
-    padding-top: 20px;
-    margin: auto;
-    text-align: center;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-bottom: 30px;
-
-    .workflow-steps-and-book-call-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 16px;
-    }
-
-    .workflow-steps h4 {
-        color: #202223;
-    }
-
-    h3,
-    p {
-        color: #202223;
-    }
-
-    @include respond-to(lowmedium) {
-        .workflow-steps-and-book-call-container {
-            flex-direction: row;
-            align-items: center;
-            gap: 16px;
-            width: 100%;
-            max-width: 1110px;
-            margin: auto;
-        }
-
-        .workflow-steps {
-            width: 50%;
-            max-width: 520px;
-        }
-
-        .workflow-steps .grid-container {
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-        }
-
-        .book-call {
-            max-width: 570px;
-            width: 50%;
         }
     }
 }
@@ -1130,75 +1318,6 @@ section {
         display: flex;
         gap: 10px;
         align-items: center;
-    }
-}
-
-// Testimonials
-.testimonials {
-    text-align: center;
-    padding: 20px;
-    background: #f9f9f9;
-
-    .testimonial-container {
-        position: relative;
-        height: 200px;
-        /* Adjust height based on content */
-    }
-
-    .testimonial {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 100%;
-        opacity: 0;
-        /* Testimonials start out invisible */
-        animation: fadeInOut 9s infinite;
-        /* Adjust timing as needed */
-        padding: 20px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        background: white;
-        border-radius: 4px;
-    }
-
-    #testimonial1 {
-        animation-delay: 0s;
-        /* First testimonial starts immediately */
-    }
-
-    #testimonial2 {
-        animation-delay: 3s;
-        /* Second testimonial starts after 3s */
-    }
-
-    #testimonial3 {
-        animation-delay: 6s;
-        /* Third testimonial starts after 6s */
-    }
-
-    @keyframes fadeInOut {
-
-        0%,
-        100% {
-            opacity: 0;
-        }
-
-        16.66%,
-        50% {
-            opacity: 1;
-        }
-    }
-
-    blockquote {
-        quotes: "“" "”" "‘" "’";
-    }
-
-    blockquote:before {
-        content: open-quote;
-    }
-
-    blockquote:after {
-        content: close-quote;
     }
 }
 
