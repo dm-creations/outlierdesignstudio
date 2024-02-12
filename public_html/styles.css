@@ -43,7 +43,7 @@ li,
 blockquote {
   font-family: "brandon-grotesque", sans-serif;
   margin: 0;
-  font-weight: 700;
+  font-weight: 300;
 }
 
 strong {
@@ -133,6 +133,26 @@ section h2 {
   font-weight: 700;
   line-height: 3.75rem;
   letter-spacing: -1px;
+}
+
+.img-and-text-section {
+  padding-left: 50px;
+  padding-right: 50px;
+}
+.img-and-text-section .img-and-text {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 20px;
+  column-gap: 100px;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+}
+@media (min-width: 768px) {
+  .img-and-text-section .img-and-text {
+    max-width: 970px;
+    flex-direction: row;
+  }
 }
 
 /* **/
@@ -275,6 +295,22 @@ section h2 {
   }
 }
 
+.button-and-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+@media (min-width: 768px) {
+  .button-and-text {
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    gap: 20px;
+  }
+}
+
 .cta-button button {
   background-color: #A674FA;
   color: #fff;
@@ -295,6 +331,7 @@ section h2 {
   transform: scale(1.1);
 }
 .cta-button-outline {
+  flex: 1 0 auto;
   font-family: "brandon-grotesque", sans-serif;
   border: solid 1px #A674FA;
   border-radius: 5px;
@@ -512,23 +549,10 @@ section h2 {
   text-align: start;
   padding: 0 10px;
 }
-.hero .button-and-text {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-}
 @media (min-width: 768px) {
   .hero h2,
   .hero h3 {
     text-align: center;
-  }
-  .hero .button-and-text {
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
   }
 }
 
@@ -695,23 +719,6 @@ section h2 {
 
 .empower {
   background-color: #E8B727;
-  padding-left: 50px;
-  padding-right: 50px;
-}
-.empower .img-and-text {
-  display: flex;
-  flex-direction: column-reverse;
-  gap: 20px;
-  column-gap: 100px;
-  margin: 0 auto;
-  justify-content: center;
-  align-items: center;
-}
-@media (min-width: 768px) {
-  .empower .img-and-text {
-    max-width: 970px;
-    flex-direction: row;
-  }
 }
 .empower .promo-img {
   width: 100%;
@@ -807,6 +814,9 @@ section h2 {
   .quote .quote-container {
     max-width: 540px;
   }
+}
+.quote blockquote {
+  font-weight: 700;
 }
 @media (min-width: 768px) {
   .quote blockquote {
@@ -997,31 +1007,12 @@ section h2 {
   }
 }
 
-.task-types-container {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-}
-.task-types-container .service-column {
-  flex-basis: 45%;
-  width: 100%;
-}
-@media (min-width: 700px) {
-  .task-types-container {
-    flex-direction: row;
-    justify-content: center;
-    align-items: stretch;
-    gap: 30px;
-    width: 100%;
-  }
-}
-
 .pricing {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  background-color: #fbee91;
+  background-color: #E8B727;
   padding-top: 30px;
   padding-left: 20px;
   padding-right: 20px;
@@ -1064,6 +1055,9 @@ section h2 {
 .pricing .price-and-title p {
   font-family: "neulis-neue", sans-serif;
 }
+.pricing .price-subtitle {
+  color: #A6A08D;
+}
 .pricing ul li:before {
   /* content is checkmark.png */
   display: inline-block;
@@ -1079,6 +1073,13 @@ section h2 {
 .pricing .cta-button,
 .pricing button {
   width: 100%;
+}
+.pricing .link-text > h5 {
+  padding-top: 20px;
+  text-align: center;
+  color: #202223;
+  text-decoration: underline;
+  font-size: 1em;
 }
 .pricing .wave-container-bottom {
   position: absolute;
@@ -1102,54 +1103,55 @@ section h2 {
   }
 }
 
-.ai-services {
+.the-team {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+.the-team p:not(:first-child) {
+  margin-top: 20px;
+}
+.the-team .the-team-img {
+  flex: 1 0 auto;
+}
+@media (min-width: 700px) {
+  .the-team .the-team-img {
+    width: 35%;
+  }
+}
+.the-team .the-team-text {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  gap: 15px;
-  flex-shrink: 0;
-  margin-top: -110px;
-  padding-top: 100px;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-bottom: 45px;
-  color: #fff;
-}
-.ai-services .ai-services-container {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  z-index: -1;
-  background: url("img/noise-effect.png"), lightgray 0% 0%/100px 100px repeat;
-  background-color: rgba(105, 144, 250, 0.9);
-}
-.ai-services .badge {
-  z-index: 2;
-}
-.ai-services h2,
-.ai-services h5 {
-  margin-bottom: 0;
-  color: #fff;
-  max-width: 540px;
-}
-.ai-services h5 {
-  font-size: 1rem;
-}
-.ai-services .link-and-arrow {
-  display: flex;
-  gap: 10px;
-  align-items: center;
+  gap: 20px;
 }
 
 .faqs {
   margin: 0 auto;
   padding: 50px;
-  background: #f9f5eb;
+  background: #FFFAFA;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.faqs .faqs-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  max-width: 970px;
+  margin: 0 auto;
+}
+@media (min-width: 768px) {
+  .faqs .faqs-container {
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+  }
+}
+@media (min-width: 768px) {
+  .faqs .faqs-container > h2 {
+    max-width: 40%;
+    text-align: start;
+  }
 }
 .faqs .faq-items {
   max-width: 800px;
@@ -1257,6 +1259,48 @@ section h2 {
   .site-footer .social-links li {
     margin: 10px 0;
   }
+}
+
+.ai-services {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 15px;
+  flex-shrink: 0;
+  margin-top: -110px;
+  padding-top: 100px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 45px;
+  color: #fff;
+}
+.ai-services .ai-services-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  z-index: -1;
+  background: url("img/noise-effect.png"), lightgray 0% 0%/100px 100px repeat;
+  background-color: rgba(105, 144, 250, 0.9);
+}
+.ai-services .badge {
+  z-index: 2;
+}
+.ai-services h2,
+.ai-services h5 {
+  margin-bottom: 0;
+  color: #fff;
+  max-width: 540px;
+}
+.ai-services h5 {
+  font-size: 1rem;
+}
+.ai-services .link-and-arrow {
+  display: flex;
+  gap: 10px;
+  align-items: center;
 }
 
 /*# sourceMappingURL=styles.css.map */

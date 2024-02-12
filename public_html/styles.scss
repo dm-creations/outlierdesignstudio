@@ -89,7 +89,7 @@ li,
 blockquote {
     font-family: $font-secondary;
     margin: 0;
-    font-weight: 700;
+    font-weight: 300;
 }
 
 strong {
@@ -189,6 +189,27 @@ section {
         font-weight: 700;
         line-height: 3.75rem;
         letter-spacing: -1px;
+    }
+}
+
+// Image and Text Section
+.img-and-text-section {
+    padding-left: $margin-left;
+    padding-right: $margin-right;
+
+    .img-and-text {
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 20px;
+        column-gap: 100px;
+        margin: 0 auto;
+        justify-content: center;
+        align-items: center;
+
+        @media (min-width: $breakpoint-medium) {
+            max-width: 970px;
+            flex-direction: row;
+        }
     }
 }
 
@@ -356,6 +377,22 @@ section {
     }
 }
 
+// Button and Text
+.button-and-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    @media (min-width: $breakpoint-medium) {
+        flex-direction: row;
+        justify-content: start;
+        align-items: center;
+        gap: 20px;
+    }
+}
+
 // CTA Button
 .cta-button {
     button {
@@ -380,6 +417,7 @@ section {
     }
 
     &-outline {
+        flex: 1 0 auto;
         font-family: $font-secondary;
         border: solid 1px #A674FA;
         border-radius: 5px;
@@ -630,13 +668,13 @@ section {
         padding: 0 10px;
     }
 
-    .button-and-text {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 10px;
-    }
+    // .button-and-text {
+    //     display: flex;
+    //     flex-direction: column;
+    //     justify-content: center;
+    //     align-items: center;
+    //     gap: 10px;
+    // }
 
     @include respond-to(medium) {
 
@@ -645,12 +683,12 @@ section {
             text-align: center;
         }
 
-        .button-and-text {
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-            gap: 20px;
-        }
+        // .button-and-text {
+        //     flex-direction: row;
+        //     justify-content: center;
+        //     align-items: center;
+        //     gap: 20px;
+        // }
     }
 }
 
@@ -842,23 +880,6 @@ section {
 // Empower
 .empower {
     background-color: $background-colour-primary;
-    padding-left: $margin-left;
-    padding-right: $margin-right;
-
-    .img-and-text {
-        display: flex;
-        flex-direction: column-reverse;
-        gap: 20px;
-        column-gap: 100px;
-        margin: 0 auto;
-        justify-content: center;
-        align-items: center;
-
-        @media (min-width: $breakpoint-medium) {
-            max-width: 970px;
-            flex-direction: row;
-        }
-    }
 
     .promo-img {
         width: 100%;
@@ -978,6 +999,7 @@ section {
     }
     
     blockquote {
+        font-weight: 700;
         @media (min-width: $breakpoint-medium) {
             text-align: center;
         }
@@ -1198,33 +1220,13 @@ section {
 
 }
 
-// Task Types (Design and Development)
-.task-types-container {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-
-    .service-column {
-        flex-basis: 45%;
-        width: 100%;
-    }
-
-    @include respond-to(lowmedium) {
-        flex-direction: row;
-        justify-content: center;
-        align-items: stretch;
-        gap: 30px;
-        width: 100%;
-    }
-}
-
 // Pricing
 .pricing {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    background-color: #fbee91;
+    background-color: $background-colour-primary;
     padding-top: 30px;
     padding-left: 20px;
     padding-right: 20px;
@@ -1274,6 +1276,10 @@ section {
         font-family: $font-primary;
     }
 
+    .price-subtitle {
+        color: #A6A08D;
+    }
+
     ul li:before {
         /* content is checkmark.png */
         display: inline-block;
@@ -1291,6 +1297,14 @@ section {
     .cta-button,
     button {
         width: 100%;
+    }
+
+    .link-text > h5 {
+        padding-top: 20px;
+        text-align: center;
+        color: $color-primary;
+        text-decoration: underline;
+        font-size: 1em;
     }
 
     .wave-container-bottom {
@@ -1319,51 +1333,26 @@ section {
     }
 }
 
-// AI Automation Services
-.ai-services {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    gap: 15px;
-    flex-shrink: 0;
-    margin-top: -110px;
-    padding-top: 100px;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-bottom: 45px;
-    color: #fff;
+// The Team
+.the-team {
+    padding-top: $section-top-pad;
+    padding-bottom: $section-bottom-pad;
 
-    .ai-services-container {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        z-index: -1;
-        background: url("img/noise-effect.png"), lightgray 0% 0% / 100px 100px repeat;
-        background-color: rgba(105, 144, 250, 0.9);
+    p:not(:first-child) {
+        margin-top: 20px;
     }
 
-    .badge {
-        z-index: 2;
+    .the-team-img {
+        flex: 1 0 auto;
+        @media (min-width: $breakpoint-lowmedium) {
+            width: 35%;
+        }
     }
 
-    h2,
-    h5 {
-        margin-bottom: 0;
-        color: #fff;
-        max-width: 540px;
-    }
-
-    h5 {
-        font-size: 1rem;
-    }
-
-    .link-and-arrow {
+    .the-team-text {
         display: flex;
-        gap: 10px;
-        align-items: center;
+        flex-direction: column;
+        gap: 20px;
     }
 }
 
@@ -1371,9 +1360,32 @@ section {
 .faqs {
     margin: 0 auto;
     padding: 50px;
-    background: #f9f5eb;
+    background: $background-colour-1;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    
+    .faqs-container {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+        justify-content: center;
+        max-width: 970px;
+        margin: 0 auto;
+    
+        @media (min-width: $breakpoint-medium) {
+            display: flex;
+            flex-direction: row;
+            align-items: start;
+        }
+
+        > h2 {
+            @media (min-width: $breakpoint-medium) {
+                max-width: 40%;
+                text-align: start;
+            }
+        }
+    }
 
     .faq-items {
         max-width: 800px;
@@ -1500,5 +1512,53 @@ section {
         .social-links li {
             margin: 10px 0;
         }
+    }
+}
+
+// AI Automation Services (Removed)
+.ai-services {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 15px;
+    flex-shrink: 0;
+    margin-top: -110px;
+    padding-top: 100px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 45px;
+    color: #fff;
+
+    .ai-services-container {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        z-index: -1;
+        background: url("img/noise-effect.png"), lightgray 0% 0% / 100px 100px repeat;
+        background-color: rgba(105, 144, 250, 0.9);
+    }
+
+    .badge {
+        z-index: 2;
+    }
+
+    h2,
+    h5 {
+        margin-bottom: 0;
+        color: #fff;
+        max-width: 540px;
+    }
+
+    h5 {
+        font-size: 1rem;
+    }
+
+    .link-and-arrow {
+        display: flex;
+        gap: 10px;
+        align-items: center;
     }
 }
