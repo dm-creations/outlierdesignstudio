@@ -12,6 +12,8 @@ $breakpoint-medium: 768px; // Example breakpoint
 $breakpoint-large: 1441px;
 $margin-left: 50px;
 $margin-right: 50px;
+$section-top-pad: 100px;
+$section-bottom-pad: 100px;
 
 // Mixin for media queries
 @mixin respond-to($breakpoint) {
@@ -1150,6 +1152,50 @@ section {
             top: 5px;
         }
     }
+}
+
+// Cha-Ching
+.cha-ching {
+    background-color: $background-colour-secondary;
+    padding-left: $margin-left;
+    padding-right: $margin-right;
+    padding-top: $section-top-pad;
+    padding-bottom: $section-bottom-pad;
+
+    .text-and-image {
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 20px;
+        column-gap: 100px;
+        margin: 0 auto;
+        justify-content: center;
+        align-items: center;
+
+        @media (min-width: $breakpoint-medium) {
+            max-width: 970px;
+            flex-direction: row;
+        }
+    }
+
+    .text {
+        p {
+            font-weight: 300;
+            color: white;
+        }
+        @media (min-width: $breakpoint-lowmedium) {
+            width: 50%;
+        }
+    }
+
+    .image {
+        width: 100%;
+
+        @media (min-width: $breakpoint-lowmedium) {
+            width: 50%;
+            flex-direction: row;
+        }
+    }
+
 }
 
 // Task Types (Design and Development)

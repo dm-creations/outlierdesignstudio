@@ -956,6 +956,47 @@ section h2 {
   }
 }
 
+.cha-ching {
+  background-color: #46695F;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+.cha-ching .text-and-image {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 20px;
+  column-gap: 100px;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+}
+@media (min-width: 768px) {
+  .cha-ching .text-and-image {
+    max-width: 970px;
+    flex-direction: row;
+  }
+}
+.cha-ching .text p {
+  font-weight: 300;
+  color: white;
+}
+@media (min-width: 700px) {
+  .cha-ching .text {
+    width: 50%;
+  }
+}
+.cha-ching .image {
+  width: 100%;
+}
+@media (min-width: 700px) {
+  .cha-ching .image {
+    width: 50%;
+    flex-direction: row;
+  }
+}
+
 .task-types-container {
   display: flex;
   flex-direction: column;
