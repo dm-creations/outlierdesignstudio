@@ -84,13 +84,38 @@
 		</div>
 	</section>
 
-	<section class="empower img-and-text-section" id="empower">
-		<div class="img-and-text">
-			<div class="promo-img"><img src="img/desktop-computer-brandless.png"/></div>
-			<div class="promo-text">
-				<h3>Transform your Shopify experience from overwhelmed to overjoyed with our unlimited design and tech support.</h3>
+	<section class="empower" id="empower">
+		<div class="img-and-text-section">
+			<div class="img-and-text">
+				<div class="promo-img"><img class="og-img" src="img/frustration.png"/><img class="img-hover" src="img/frustration-fixed.png"/></div>
+				<div class="promo-img-hover"></div>
+				<style>
+					.img-hover {
+						display: none;
+						top: 0;
+						left: 0;
+						width: 100%;
+						transition: all 0.3s ease-in-out;
+						z-index: 1;
+					}
+					.img-and-text:hover .img-hover {
+						display: block;
+					}
+					.img-and-text:hover .og-img {
+						display: none;
+					}
+				</style>
+				<div class="promo-text">
+					<h3>Transform your Shopify experience from overwhelmed to overjoyed with our unlimited design and tech support.</h3>
+				</div>
 			</div>
 		</div>
+		<!-- <div class="wave-container-bottom">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 330" fill="none">
+				<path fill-rule="evenodd" clip-rule="evenodd" d="M1449.03 284.87L1328.33 246.906C1245.86 219.806 1169.27 218.653 1048.44 235.55C927.608 252.447 845.833 337.942 725 270.354C604.167 202.765 483.333 330 362.5 330C241.667 330 120.833 202.765 60.4167 253.457L0 304.148L0 0L60.4167 0C120.833 0 241.667 0 362.5 0C483.333 0 604.167 0 725 0C845.833 0 966.667 0 1087.5 0C1208.33 0 1329.17 0 1389.58 0L1450 0L1449.03 284.87Z" fill="#E8B727"/>
+			</svg>
+		</div> -->
+		<div class="spacer" style="height:calc(100vw / 13.5);width:100%;"></div>
 	</section>
 
 	<section class="how-it-works" id="how-it-works">
@@ -364,43 +389,49 @@
 				<div class="faq-item">
 					<button class="faq-question">Who is this service for?</button>
 					<div class="faq-answer">
-						<p></p>
+						<p>This service is for people who are at least one year into their Shopify journey and want to streamline and propel the success of their store or for startups who want to get started on Shopify and hit the ground running.</p>
 					</div>
 				</div>
 				<div class="faq-item">
 					<button class="faq-question">Why should I use your service over an agency or freelancers?</button>
 					<div class="faq-answer">
-						<p></p>
+						<p>Good question! Our services our offer the perfect blend of having a full-time developer and designer on your team that you can use at your convenience with the ability to upgrade and downgrade or your pause plan depending on your need.  For instance, if you've got a sales campaign or big promotion coming you can use our services and then pause your plan once it's over until the next one or other tasks need doing.
+							<br/><br/>
+							Also, you will also be working with a two person team that knows your brand who will give a personlised experience, which you rarely get with large agencies or when working with multiple freelancers. So no debriefing or repeatedly sending over assets whenever you need work done, saving you time.
+						</p>
 					</div>
 				</div>
 				<div class="faq-item">
 					<button class="faq-question">What is the process for requesting a task?</button>
 					<div class="faq-answer">
-						<p></p>
+						<p>At Outlier Design Studio, we use a client dashboard in Notion where you can request development or design tasks. In Notion you can write out your request, share your google docs, attached documents and add comments. It offers lots of flexibility so we can begin working on your request asap.</p>
 					</div>
 				</div>
 				<div class="faq-item">
 					<button class="faq-question">Do you do store migration and/or store set ups?</button>
 					<div class="faq-answer">
-						<p></p>
+						<p>Yes, we do!</p>
 					</div>
 				</div>
 				<div class="faq-item">
 					<button class="faq-question">How does the pause feature work?</button>
 					<div class="faq-answer">
-						<p></p>
+						<p>We understand you may not have tasks that need doing that add up to entire month, so in those instances you can simply pause your subscription.
+							<br/>
+							Billing cycles are based on a monthly period. If you sign up on the 1st of March and use the service for 15 days, and then decide to pause your subscription, it means that the billing cycle will be paused and you'll have 16 days of service remaining to be used in the future.
+						</p>
 					</div>
 				</div>
 				<div class="faq-item">
 					<button class="faq-question">Is there a limit to how many tasks I can have?</button>
 					<div class="faq-answer">
-						<p></p>
+						<p>Nope, you are able to request as many tasks as you would like and they will be completed one by one.</p>
 					</div>
 				</div>
 				<div class="faq-item">
 					<button class="faq-question">How soon will be tasks be completed?</button>
 					<div class="faq-answer">
-						<p></p>
+						<p>Each task will be completed within 72 hours during the working week. So, if you submit a task request on Friday it will be completed by the next Tuesday.</p>
 					</div>
 				</div>
 				<div class="faq-item">
@@ -412,13 +443,13 @@
 				<div class="faq-item">
 					<button class="faq-question">What design work do you do?</button>
 					<div class="faq-answer">
-						<p></p>
+						<p>Website, Wireframes, UI/UX design, Responsive design, Landing page design, Motion graphics, Branding and identity, Custom graphics.</p>
 					</div>
 				</div>
 				<div class="faq-item">
 					<button class="faq-question">Is there any design work you don&apos;t do?</button>
 					<div class="faq-answer">
-						<p>We currently don't design Logos from scratch, 3D modelling, animated graphics (gifs, etc), complex packaging or extensive print design (magazines, books etc).</p>
+						<p>We currently don't design Logos from scratch, 3D modelling, animated graphics (gifs, etc).</p>
 					</div>
 				</div>
 				<div class="faq-item">
@@ -430,7 +461,7 @@
 				<div class="faq-item">
 					<button class="faq-question">Do you do email design and templates? </button>
 					<div class="faq-answer">
-						<p></p>
+						<p>Yes, we offer this as an additional monthly cost of 300 GBP. The service includes custom email designs and template set up in your email marketing provider.</p>
 					</div>
 				</div>
 			</div>

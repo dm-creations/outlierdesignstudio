@@ -896,6 +896,17 @@ section {
             width: 50%;
         }
     }
+
+    .wave-container-bottom {
+        position: absolute;
+        z-index: 1;
+        bottom: -120px;
+    }
+
+    .wave-container-bottom>svg {
+        width: 100vw;
+        height: 100%;
+    }
 }
 
 // How it Works
@@ -903,7 +914,7 @@ section {
     background-color: $background-colour-secondary;
     margin: auto;
     text-align: center;
-    padding-top: 40px;
+    padding-top: 100px;
     padding-bottom: 100px;
 
     h2 {
@@ -1141,7 +1152,6 @@ section {
 
     .feature-lists {
         position: relative;
-        padding-top: 60px;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -1454,6 +1464,7 @@ section {
 
     .copyright {
         opacity: 0.4;
+        color: #fff;
     }
 
     .footer-content {
