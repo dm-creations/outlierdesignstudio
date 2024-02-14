@@ -722,7 +722,6 @@ section h2 {
 }
 .empower .promo-img {
   width: 100%;
-  height: 500px;
 }
 @media (min-width: 700px) {
   .empower .promo-img {
@@ -735,12 +734,21 @@ section h2 {
     width: 50%;
   }
 }
+.empower .wave-container-bottom {
+  position: absolute;
+  z-index: 1;
+  bottom: -120px;
+}
+.empower .wave-container-bottom > svg {
+  width: 100vw;
+  height: 100%;
+}
 
 .how-it-works {
   background-color: #46695F;
   margin: auto;
   text-align: center;
-  padding-top: 40px;
+  padding-top: 100px;
   padding-bottom: 100px;
 }
 .how-it-works h2 {
@@ -938,7 +946,6 @@ section h2 {
 }
 .benefits .feature-lists {
   position: relative;
-  padding-top: 60px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1149,13 +1156,15 @@ section h2 {
 }
 @media (min-width: 768px) {
   .faqs .faqs-container > h2 {
+    min-width: 40%;
     max-width: 40%;
     text-align: start;
   }
 }
 .faqs .faq-items {
   max-width: 800px;
-  margin: 0 auto;
+  margin: 0;
+  margin-right: auto;
 }
 .faqs .faq h2 {
   text-align: center;
@@ -1213,6 +1222,7 @@ section h2 {
 }
 .site-footer .copyright {
   opacity: 0.4;
+  color: #fff;
 }
 .site-footer .footer-content {
   max-width: 800px;

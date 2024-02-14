@@ -87,11 +87,65 @@
 	<section class="empower" id="empower">
 		<div class="img-and-text-section">
 			<div class="img-and-text">
-				<div class="promo-img"><img class="og-img" src="img/frustration.png"/><img class="img-hover" src="img/frustration-fixed.png"/></div>
-				<div class="promo-img-hover"></div>
+				<!-- <div class="promo-img"><img class="og-img" src="img/frustration.png"/><img class="img-hover" src="img/frustration-fixed.png"/></div> -->
+				<ol class="promo-img">
+					<li>
+						<div class="tv-1"><img src="img/tri-vision/tri-vision1_0.png"/></div>
+						<div class="tv-2"><img src="img/tri-vision/tri-vision2_0.png"/></div>
+					</li>
+					<li>
+						<div class="tv-1"><img src="img/tri-vision/tri-vision1_1.png"/></div>
+						<div class="tv-2"><img src="img/tri-vision/tri-vision2_1.png"/></div>
+					</li>
+					<li>
+						<div class="tv-1"><img src="img/tri-vision/tri-vision1_2.png"/></div>
+						<div class="tv-2"><img src="img/tri-vision/tri-vision2_2.png"/></div>
+					</li>
+					<li>
+						<div class="tv-1"><img src="img/tri-vision/tri-vision1_3.png"/></div>
+						<div class="tv-2"><img src="img/tri-vision/tri-vision2_3.png"/></div>
+					</li>
+					<li>
+						<div class="tv-1"><img src="img/tri-vision/tri-vision1_4.png"/></div>
+						<div class="tv-2"><img src="img/tri-vision/tri-vision2_4.png"/></div>
+					</li>
+				</ol>
 				<style>
+					.promo-img {
+						position: relative;
+						display: flex;
+						flex-wrap: nowrap;
+						width: 100%;
+						height: 100%;
+						overflow: hidden;
+						list-style: none;
+					}
+					.promo-img li {
+						display: inline-block;
+						width: 20%;
+						position: relative;
+						margin: 0;
+					}
+					.promo-img li div {
+						width: 100%;
+						backface-visibility: hidden;
+						transform-origin: 50% 50%;
+					}
+					.promo-img li div:nth-child(1) {
+						position: relative;
+						z-index: 1;
+						transform: rotateY(0);
+					}
+					.promo-img li div:nth-child(2) {
+						position: absolute;
+						top: 0;
+						right: 0;
+						transform: rotateY(-90deg);
+					}
 					.img-hover {
-						display: none;
+						/* visibility: hidden; */
+						opacity: 0;
+						position: absolute;
 						top: 0;
 						left: 0;
 						width: 100%;
@@ -99,14 +153,20 @@
 						z-index: 1;
 					}
 					.img-and-text:hover .img-hover {
-						display: block;
+						/* visibility: visible; */
+						opacity: 1;
+						transition: all 0.3s ease-out-in;
 					}
 					.img-and-text:hover .og-img {
-						display: none;
+						/* visibility: hidden; */
+						/* opacity: 0; */
+						transition: all 0.3s ease-in-out;
 					}
 				</style>
 				<div class="promo-text">
 					<h3>Transform your Shopify experience from overwhelmed to overjoyed with our unlimited design and tech support.</h3>
+<div id="rotationValue"></div>
+<div id="x-value"></div>
 				</div>
 			</div>
 		</div>
@@ -334,7 +394,7 @@
 					<li>Advanced analytics and reporting</li>
 					<li style="visibility:hidden;">...and much more</li>
 				</ul>
-				<a class="cta-button" href="https://buy.stripe.com/dR67sQ65w36Mg6I9AB" target="_blank">
+				<a class="cta-button" href="https://buy.stripe.com/8wM28walMbDi1bO4gi" target="_blank">
 					<button class="btn-book">Sign up now</button>
 				</a>
 				<a class="link-text" href="https://calendly.com/outlierdesignstudio/outlier-design-studio-intro" target="_blank"><h5>Book a Call</h5></a>
@@ -490,7 +550,7 @@
 
 	const nav = document.querySelector('.nav');
 	const logo = document.querySelector('.logo');
-
+	
 	// LISTENERS
 	logo.addEventListener('pointerdown', () => {
 		if (window.innerWidth > 700) { return }
@@ -544,6 +604,24 @@
 			}
 		});
 	}
+
+	let rotationValueElement = document.querySelector('#rotationValue');
+	let xValue = document.querySelector('#x-value');
+	gsap.to(".tv-1", {
+		scrollTrigger: {
+			trigger: ".promo-img", start: "bottom bottom", end: "top 40%", scrub: 1,
+		},
+		rotationY: 120, 
+		x: "-30px",
+		// delay: 0.5,
+	});
+	gsap.to(".tv-2", {
+		scrollTrigger: {
+			trigger: ".promo-img", start: "bottom bottom", end: "top 40%", scrub: 1,
+		},
+		rotationY: 0,
+		x: 0
+	});
 
 	// FUNCTIONS
 	function closeMenu() {
