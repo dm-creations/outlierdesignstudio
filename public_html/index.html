@@ -10,6 +10,7 @@
 <meta property="og:description" content="Our all-in-one design and development subscription offers a cohesive, high-performing website solution tailored to your needs.">
 <link rel="stylesheet" href="https://use.typekit.net/lwx0fng.css">
 <link rel="stylesheet" href="styles.css">
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script> -->
 <script src="js/gsap.min.js"></script>
 <script src="js/ScrollToPlugin.min.js"></script>
 <script src="js/ScrollTrigger.min.js"></script>
@@ -20,7 +21,7 @@
 			<h2>Subscription design + development<br/>for Shopify businesses</h2>
 			<h3>Unlimited design and development for busy Shopify store owners.<br/>Pause or cancel anytime.</h3>
 			<div class="button-and-text">
-				<a class="cta-button" href="#pricing">
+				<a class="cta-button scroll-to" href="#pricing">
 					<button>See Plans</button>
 				</a>
 				<a class="cta-button-outline" href="https://calendly.com/outlierdesignstudio/outlier-design-studio-intro" target="_blank">
@@ -40,10 +41,10 @@
 					<li><a href="#how-it-works">How it Works</a></li>
 					<li><a href="#our-work">Our Work</a></li>
 					<li><a href="#pricing">Pricing</a></li>
-					<li><a href="#faq">FAQs</a></li>
-					<li><a href="#ai-services">AI Services</a></li>
-					<li>
-						<a class="cta-button" href="#pricing">
+					<li><a href="#faqs">FAQs</a></li>
+					<!-- <li><a href="#ai-services">AI Services</a></li> -->
+					<li class="get-started">
+						<a class="cta-button .scroll-to" href="#pricing">
 							<button>Get Started</button>
 						</a>
 					</li>
@@ -88,7 +89,7 @@
 		<div class="img-and-text-section">
 			<div class="img-and-text">
 				<!-- <div class="promo-img"><img class="og-img" src="img/frustration.png"/><img class="img-hover" src="img/frustration-fixed.png"/></div> -->
-				<ol class="promo-img">
+				<ol class="promo-img tri-vision">
 					<li>
 						<div class="tv-1"><img src="img/tri-vision/tri-vision1_0.png"/></div>
 						<div class="tv-2"><img src="img/tri-vision/tri-vision2_0.png"/></div>
@@ -134,13 +135,14 @@
 					.promo-img li div:nth-child(1) {
 						position: relative;
 						z-index: 1;
+						left: 0;
 						transform: rotateY(0);
 					}
 					.promo-img li div:nth-child(2) {
 						position: absolute;
 						top: 0;
-						right: 0;
-						transform: rotateY(-90deg);
+						left: 0;
+						transform: rotateY(-120deg) translateX(-100%);
 					}
 					.img-hover {
 						/* visibility: hidden; */
@@ -158,15 +160,14 @@
 						transition: all 0.3s ease-out-in;
 					}
 					.img-and-text:hover .og-img {
-						/* visibility: hidden; */
+						/* visibility: hidden; *
 						/* opacity: 0; */
 						transition: all 0.3s ease-in-out;
 					}
+					
 				</style>
 				<div class="promo-text">
-					<h3>Transform your Shopify experience from overwhelmed to overjoyed with our unlimited design and tech support.</h3>
-<div id="rotationValue"></div>
-<div id="x-value"></div>
+					<h3>Transform your Shopify experience from <span class="overwhelmed">overwhelmed</span> to <span class="overjoyed">overjoyed</span> with our unlimited design and tech support.</h3>
 				</div>
 			</div>
 		</div>
@@ -264,7 +265,7 @@
 
 	<section class="benefits" id="benefits">
 		<h2>Membership perks</h2>
-		<a class="cta-button" href="#pricing">
+		<a class="cta-button scroll-to" href="#pricing">
 			<button>See Plans</button>
 		</a>
 		<div class="feature-lists">
@@ -414,8 +415,8 @@
 				<h3>The Team rooting for your success</h3>
 				<div>
 					<p>We understand that navigating the Shopify store landscape can be overwhelming, with its demands on your time, finances, and energy feeling endless.</p>
-					<p>We have been there ourselves as Dwayne, a skilled frontend web developer since 2016, specialises in Shopify and Becky, launched her first Shopify brand in 2016 and ran two stores until 2023, generating £40,000 in revenue with her second brand.</p>
-					<p>This Shopify entrepreneurial journey isn't easy so our mission is to transform your overwhelm into calm and confidence, ensuring your online store is not only aesthetically appealing but also highly functional and a profitable venture.</p>
+					<p>We have been there ourselves as Dwayne, a skilled frontend web developer since 2016, specialises in Shopify and Becky, the designer, launched her first Shopify brand in 2016 and ran two stores until 2023, generating £40,000 in revenue with her second brand.</p>
+					<p>This Shopify entrepreneurial journey isn't easy so our mission is to transform your "overwhelm" into "calm and confidence", ensuring your online store is not only aesthetically appealing but also highly functional and a profitable venture.</p>
 				</div>
 				<div class="button-and-text">
 					<a class="cta-button-outline" href="https://calendly.com/outlierdesignstudio/outlier-design-studio-intro" target="_blank">
@@ -560,7 +561,7 @@
 			openMenu();
 		}
 	});
-	document.querySelectorAll('.nav-links ul li a, .button-and-text a').forEach((link) => {
+	document.querySelectorAll('.nav-links ul li a, .scroll-to').forEach((link) => {
 		link.addEventListener('click', (e) => {
 			e.preventDefault();
 		});
@@ -612,7 +613,7 @@
 			trigger: ".promo-img", start: "bottom bottom", end: "top 40%", scrub: 1,
 		},
 		rotationY: 120, 
-		x: "-30px",
+		x: 0,
 		// delay: 0.5,
 	});
 	gsap.to(".tv-2", {
@@ -622,6 +623,112 @@
 		rotationY: 0,
 		x: 0
 	});
+	gsap.to(".overwhelmed", {
+		scrollTrigger: {
+			trigger: ".promo-img", start: "bottom bottom", end: "top 35%", scrub: 1,
+		},
+		ease: "none",
+		"--pseudo-left": "100%",
+		"--pseudo-width": "0",
+	});
+	gsap.to(".overjoyed", {
+		scrollTrigger: {
+			trigger: ".promo-img", start: "bottom bottom", end: "top 35%", scrub: 1,
+		},
+		ease: "power2.out",
+		"--pseudo-inverse-width": "100%",
+		delay: 1,
+	});
+
+	// Three.js
+	// const promoImgElement = document.querySelector('.promo-img');
+	// const width = promoImgElement.offsetWidth;
+	// const height = promoImgElement.offsetHeight;
+
+	// const scene = new THREE.Scene();
+	// // Camera setup
+	// const aspectRatio = width / height; // Use the dimensions obtained from the .promo-img element
+	// const frustumSize = 30;  // Adjust based on the scale of your scene
+	// // const camera = new THREE.PerspectiveCamera(75, aspectRatio, 0.1, 1000);
+	// const camera = new THREE.OrthographicCamera(
+	// 	frustumSize * aspectRatio / -2, // left
+	// 	frustumSize * aspectRatio / 2,  // right
+	// 	frustumSize / 2,                // top
+	// 	frustumSize / -2,               // bottom
+	// 	1,                              // near
+	// 	1000                            // far
+	// );
+	// // const camera = new THREE.OrthographicCamera(
+	// // 	width / -2, width / 2, height / 2, height / -2, 1, 1000
+	// // );
+
+	// // Position the camera to face the object directly
+	// camera.position.set(0, 0, 100); // Adjust Z to be far enough to see the object
+	// camera.lookAt(scene.position); // Ensure the camera is facing the center of the scene
+	// // Renderer setup
+	// const renderer = new THREE.WebGLRenderer();
+	// renderer.setSize(width, height); // Use the dimensions obtained from the .promo-img element
+
+	// // Adjust camera aspect ratio and update projection matrix
+	// camera.aspect = width / height;
+	// // camera.updateProjectionMatrix();
+
+
+	// // promoImgElement.appendChild(renderer.domElement);
+	// document.querySelector('.promo-text').appendChild(renderer.domElement);
+
+	// const loader = new THREE.TextureLoader();
+
+	// // Load your images
+	// const texture1 = loader.load('img/tri-vision/tri-vision1_0.png');
+	// const texture2 = loader.load('img/tri-vision/tri-vision2_0.png');
+
+	// const imageAspectRatio = 87 / 388; 
+	// texture1.wrapS = THREE.RepeatWrapping;
+	// texture1.wrapT = THREE.RepeatWrapping;
+
+	// texture2.wrapS = THREE.RepeatWrapping;
+	// texture2.wrapT = THREE.RepeatWrapping;
+	
+	// // Creating a triangular prism
+	// const geometry = new THREE.CylinderGeometry(2, 2, 29, 3); // radiusTop, radiusBottom, height, radialSegments
+	// // Adjust texture repeat based on the aspect ratio and the geometry's dimensions
+	// texture1.repeat.set(10 / imageAspectRatio, 29);
+	// // Create materials
+	// const material1 = new THREE.MeshBasicMaterial({ map: texture1 });
+	// const material2 = new THREE.MeshBasicMaterial({ map: texture2 });
+
+	// // Apply materials to the geometry
+	// const materials = [material1, material2, material1]; // Example setup, adjust based on your geometry's faces
+	// const prism = new THREE.Mesh(geometry, materials);
+
+	// scene.add(prism);
+
+	// // camera.position.z = 20;
+	// prism.position.x = -13.8;
+	// prism.rotation.y = 120;
+
+	// function animate() {
+	// 	requestAnimationFrame(animate);
+
+	// 	// Rotate prism
+	// 	// prism.rotation.x += 0.01;
+	// 	prism.rotation.y += 0.01;
+
+	// 	renderer.render(scene, camera);
+	// }
+
+	// animate();
+
+	// // Ensure the camera and renderer are updated if the window size changes or if dynamic elements change size
+	// window.addEventListener('resize', () => {
+	// 	const width = promoImgElement.offsetWidth;
+	// 	const height = promoImgElement.offsetHeight;
+
+	// 	renderer.setSize(width, height);
+	// 	camera.aspect = width / height;
+	// 	camera.updateProjectionMatrix();
+	// });
 
 	// FUNCTIONS
 	function closeMenu() {

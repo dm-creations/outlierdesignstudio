@@ -523,7 +523,7 @@ section {
 
 // Tri-Vision Container
 .tri-vision {
-    
+
 }
 
 /* **/
@@ -783,6 +783,12 @@ section {
                     flex-direction: column;
                     justify-content: center;
                 }
+                .get-started {
+                    position: absolute;
+                    right: 20px;
+                    top: 5px;
+
+                }
             }
         }
     }
@@ -896,6 +902,35 @@ section {
     }
 
     .promo-text {
+        .overwhelmed {
+            position: relative;
+            display: inline-block;
+            z-index: 1;
+            --pseudo-width: 100%;
+            &::before {
+                content: "";
+                position: absolute;
+                background-color: red;
+                inset: -3px -5px;
+                z-index: -1;
+                left: var(--pseudo-left, 0);
+                width: var(--pseudo-width);
+            }
+        }
+        .overjoyed {
+            position: relative;
+            display: inline-block;
+            z-index: 1;
+            --pseudo-inverse-width: 0;
+            &::before {
+                content: "";
+                position: absolute;
+                background-color: lawngreen;
+                inset: -7px 0;
+                z-index: -1;
+                width: var(--pseudo-inverse-width, 0);
+            }
+        }
         @media (min-width: $breakpoint-lowmedium) {
             width: 50%;
         }
@@ -1430,6 +1465,7 @@ section {
         font-style: normal;
         font-weight: 400;
         line-height: 1.5rem;
+        text-align: start;
     }
 
     .faq-answer {
